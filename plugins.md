@@ -43,4 +43,4 @@
 |---------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
 |course format  |grid                |https://github.com/gjb2048/moodle-format_grid                   |2019111702|2020/06/18|f59ed8e561056fb78dde6179837d2b12f80e53d3|
 |theme          |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020042000|2020/06/18|0cf0c1b88550e771fb3f5b15df0ffbeb0ba0a56b|
-
+|mod            |subcourse           |https://github.com/mudrd8mz/moodle-mod_subcourse                |2020071100|2020/07/14|d92f334eddf023cfd815b191899d0afecb8b54e2|
