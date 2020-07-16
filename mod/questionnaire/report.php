@@ -499,7 +499,12 @@ switch ($action) {
         // Check if email report was selected.
         $emailreport = optional_param('emailreport', '', PARAM_ALPHA);
         if (empty($emailreport)) {
-            download_as_dataformat($name, $dataformat, $columns, $output);
+            // In 3.9 forward, download_as_dataformat is replaced by \core\dataformat::download_data.
+            if (method_exists('\\core\\dataformat', 'download_data')) {
+                \core\dataformat::download_data($name, $dataformat, $columns, $output);
+            } else {
+                download_as_dataformat($name, $dataformat, $columns, $output);
+            }
         } else {
             // Emailreport button selected.
             if (get_config('questionnaire', 'allowemailreporting') && (!empty($emailroles) || !empty($emailextra))) {
@@ -616,29 +621,7 @@ switch ($action) {
         );
 
         if ($outputtarget == 'pdf') {
-            require_once($CFG->libdir . '/pdflib.php');
-            $pdf = new pdf();
-            $pdf->SetCreator(PDF_CREATOR);
-            $pdf->SetAuthor('Moodle Questionnaire');
-            $pdf->SetTitle('All responses');
-            $pdf->setPrintHeader(false);
-            // Set default monospaced font.
-            $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-            // Set margins.
-            $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-            $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-            $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-            // Set auto page breaks.
-            $pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM);
-
-            // Set image scale factor.
-            $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-            // Set background color for headings.
-            $pdf->SetFillColor(238, 238, 238);
-            $pdf->AddPage('L');
-
+            $pdf = questionnaire_report_start_pdf();
             if ($currentgroupid > 0) {
                 $groupname = get_string('group') . ': <strong>' . groups_get_group_name($currentgroupid) . '</strong>';
             } else {
@@ -774,29 +757,7 @@ switch ($action) {
                 get_string('noresponses', 'questionnaire'));
 
         } else if ($outputtarget == 'pdf') {
-            require_once($CFG->libdir . '/pdflib.php');
-            $pdf = new pdf();
-            $pdf->SetCreator(PDF_CREATOR);
-            $pdf->SetAuthor('Moodle Questionnaire');
-            $pdf->SetTitle('All responses');
-            $pdf->setPrintHeader(false);
-            // Set default monospaced font.
-            $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-            // Set margins.
-            $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-            $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-            $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-            // Set auto page breaks.
-            $pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM);
-
-            // Set image scale factor.
-            $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-            // Set background color for headings.
-            $pdf->SetFillColor(238, 238, 238);
-            $pdf->AddPage('L');
-
+            $pdf = questionnaire_report_start_pdf();
             if ($currentgroupid > 0) {
                 $groupname = get_string('group') . ': <strong>' . groups_get_group_name($currentgroupid) . '</strong>';
             } else {
@@ -855,4 +816,35 @@ switch ($action) {
             echo $questionnaire->renderer->footer($course);
         }
         break;
+}
+
+/**
+ * @return pdf
+ */
+function questionnaire_report_start_pdf() {
+    global $CFG;
+
+    require_once($CFG->libdir . '/pdflib.php');
+    $pdf = new pdf();
+    $pdf->SetCreator(PDF_CREATOR);
+    $pdf->SetAuthor('Moodle Questionnaire');
+    $pdf->SetTitle('All responses');
+    $pdf->setPrintHeader(false);
+    // Set default monospaced font.
+    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+    // Set margins.
+    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+    $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+    $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+    // Set auto page breaks.
+    $pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM);
+
+    // Set image scale factor.
+    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+    // Set background color for headings.
+    $pdf->SetFillColor(238, 238, 238);
+    $pdf->AddPage('L');
+    return $pdf;
 }

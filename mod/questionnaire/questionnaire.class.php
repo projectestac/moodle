@@ -1235,6 +1235,11 @@ class questionnaire {
         }
 
         $this->print_survey_start($message, $section, $numsections, $hasrequired, '', 1);
+        // Only show progress bar on questionnaires with more than one page.
+        if ($this->progressbar && isset($this->questionsbysec) && count($this->questionsbysec) > 1) {
+            $this->page->add_to_page('progressbar',
+                    $this->renderer->render_progress_bar($section, $this->questionsbysec));
+        }
         foreach ($this->questionsbysec[$section] as $questionid) {
             if ($this->questions[$questionid]->type_id != QUESSECTIONTEXT) {
                 $i++;
@@ -1380,11 +1385,11 @@ class questionnaire {
         if ($section == 1) {
             if (!empty($this->survey->title)) {
                 $this->survey->title = format_string($this->survey->title);
-                $this->page->add_to_page('title', clean_text($this->survey->title, FORMAT_HTML));
+                $this->page->add_to_page('title', $this->survey->title);
             }
             if (!empty($this->survey->subtitle)) {
                 $this->survey->subtitle = format_string($this->survey->subtitle);
-                $this->page->add_to_page('subtitle', clean_text($this->survey->subtitle, FORMAT_HTML));
+                $this->page->add_to_page('subtitle', $this->survey->subtitle);
             }
             if ($this->survey->info) {
                 $infotext = file_rewrite_pluginfile_urls($this->survey->info, 'pluginfile.php',
@@ -2353,6 +2358,11 @@ class questionnaire {
         if (empty($thankhead)) {
             $thankhead = get_string('thank_head', 'questionnaire');
         }
+        if ($this->progressbar && isset($this->questionsbysec) && count($this->questionsbysec) > 1) {
+            // Show 100% full progress bar on completion.
+            $this->page->add_to_page('progressbar',
+                    $this->renderer->render_progress_bar(count($this->questionsbysec) + 1, $this->questionsbysec));
+        }
         $this->page->add_to_page('title', $thankhead);
         $this->page->add_to_page('addinfo',
             format_text(file_rewrite_pluginfile_urls($thankbody, 'pluginfile.php',
@@ -2699,9 +2709,9 @@ class questionnaire {
             $this->survey_results_navbar($rid);
         }
 
-        $this->page->add_to_page('title', clean_text($this->survey->title));
+        $this->page->add_to_page('title', format_string($this->survey->title));
         if ($this->survey->subtitle) {
-            $this->page->add_to_page('subtitle', clean_text($this->survey->subtitle));
+            $this->page->add_to_page('subtitle', format_string($this->survey->subtitle));
         }
         if ($this->survey->info) {
             $infotext = file_rewrite_pluginfile_urls($this->survey->info, 'pluginfile.php',
@@ -2961,6 +2971,7 @@ class questionnaire {
             $fullname = fullname($user);
             $username = $user->username;
         }
+        $modulename = $this->name;
 
         if (in_array('response', $options)) {
             array_push($positioned, $resprow->rid);
@@ -2990,6 +3001,12 @@ class questionnaire {
         }
         if (in_array('username', $options)) {
             array_push($positioned, $username);
+        }
+        if (in_array('userid', $options)) {
+            array_push($positioned, $user->id);
+        }
+        if (in_array('modulename', $options)) {
+            array_push($positioned, $modulename);
         }
         if (in_array('complete', $options)) {
             array_push($positioned, $resprow->complete);
@@ -3033,8 +3050,11 @@ class questionnaire {
         $columns = array();
         $types = array();
         foreach ($options as $option) {
-            if (in_array($option, array('response', 'submitted', 'id'))) {
+            if (in_array($option, array('response', 'submitted', 'id', 'modulename'))) {
                 $columns[] = get_string($option, 'questionnaire');
+                $types[] = 0;
+            } else if (in_array($option, array('userid'))) {
+                $columns[] = get_string($option, 'grades');
                 $types[] = 0;
             } else {
                 $columns[] = get_string($option);
@@ -3853,5 +3873,41 @@ class questionnaire {
             $this->commit_submission_response($rid, $userid);
         }
         return $ret;
+    }
+
+    public function get_all_file_areas() {
+        global $DB;
+
+        $areas = [];
+        $areas['info'] = $this->sid;
+        $areas['thankbody'] = $this->sid;
+
+        // Add question areas.
+        if (empty($this->questions)) {
+            $this->add_questions();
+        }
+        $areas['question'] = [];
+        foreach ($this->questions as $question) {
+            $areas['question'][] = $question->id;
+        }
+
+        // Add feedback areas.
+        $areas['feedbacknotes'] = $this->sid;
+        $fbsections = $DB->get_records('questionnaire_fb_sections', ['surveyid' => $this->sid]);
+        if (!empty($fbsections)) {
+            $areas['sectionheading'] = [];
+            foreach ($fbsections as $section) {
+                $areas['sectionheading'][] = $section->id;
+                $feedbacks = $DB->get_records('questionnaire_feedback', ['sectionid' => $section->id]);
+                if (!empty($feedbacks)) {
+                    $areas['feedback'] = [];
+                    foreach ($feedbacks as $feedback) {
+                        $areas['feedback'][] = $feedback->id;
+                    }
+                }
+            }
+        }
+
+        return $areas;
     }
 }

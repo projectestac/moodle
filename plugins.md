@@ -2,12 +2,12 @@
 
 |Type           |Name                |Source                                                          |Version   |Date      | Commit                                 |
 |---------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
-|mod            |choicegroup         |https://github.com/ndunand/moodle-mod_choicegroup               |2020052500|2020/06/16|53e5e7591ff9af7c1afa4e0559db2a2951a86fac|
+|mod            |choicegroup         |https://github.com/ndunand/moodle-mod_choicegroup               |2020070100|2020/07/01|04c8f0d417ccc2d7b147268120938895fb168ad3|
 |mod            |geogebra            |https://github.com/projectestac/moodle-mod_geogebra             |2019010600|2020/06/16|4e26a45edd6109860301015d8fa73a367cc490cc|
 |mod            |hotpot              |https://github.com/gbateson/moodle-mod_hotpot                   |2020060544|2020/06/16|748dc52d7cc96c7a0a38d0869a1dc20401b8b14e|
 |mod            |jclic               |https://github.com/projectestac/moodle-mod_jclic                |2018112000|2020/06/16|7c93722eaa868c1b50fd4cbf8215bf78caa3a10e|
 |mod            |journal             |https://github.com/elearningsoftware/moodle-mod_journal         |2020020700|2020/06/16|17df0cc947304be44f9ceb89e216dfbbc46f8716|
-|mod            |questionnaire       |https://github.com/PoetOS/moodle-mod_questionnaire              |2019110100|2020/06/16|a3ad4233762cd4248eac34947b1822e37ee8cb41|
+|mod            |questionnaire       |https://github.com/PoetOS/moodle-mod_questionnaire              |2020062301|2020/06/30|b8137c0227407149d3f8f01c345548d13474feee|
 |mod            |qv                  |https://github.com/projectestac/moodle-mod_qv                   |2019010700|2020/06/16|97620971e6171c7ad89d980072ce4263b1dc349b|
 |block          |rcontent            |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
 |block          |completion_progress |https://github.com/deraadt/moodle-block_completion_progress     |2020033000|2020/06/16|42bbe9728708902b5edcd2203f8054b3a134edf8|
