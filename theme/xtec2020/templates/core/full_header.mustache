@@ -47,9 +47,7 @@
 </header>
 <nav id="main_navigation" class="clearfix navbar mb-3" role="navigation">
     {{#isloggedin}}
-        <div data-region="drawer-toggle" class="d-inline-block ml-3 align-self-start">
-            <button id="drawer-button" aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
-        </div>
+        {{! drawer-toggle moved to navbar (templates/navbar.moustache) }}
         <ul class="navbar-nav mr-auto">
             {{{ custom_menu }}}
         </ul>

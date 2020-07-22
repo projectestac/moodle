@@ -71,11 +71,28 @@ nav.fixed-top.navbar {
     .navbar-brand {
         line-height: 28px;
         color: #777;
+        /* Gracefully truncate long site titles */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
+    /* Don't wrap right nav bar*/
+    .navbar-nav {
+        flex-wrap: nowrap;
+    }
+
+    /* Don't wrap nav bar elements*/
+    .navbar-nav li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    /*
     .brand.xtec {
         padding-right: 40px;
     }
+    */
 }
 
 #main_navigation {
@@ -353,6 +370,7 @@ nav.fixed-top.navbar {
 
 .footerlogos {
     text-align: center;
+    line-height: 2.5rem;
     margin: 8px 0;
     a {
         margin: 8px 0;
