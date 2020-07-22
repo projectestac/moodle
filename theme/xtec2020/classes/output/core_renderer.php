@@ -134,17 +134,17 @@ class core_renderer extends \core_renderer {
     }
 
     public function header_logos() {
-        $logos = '<a href="http://www20.gencat.cat/portal/site/ensenyament" class="brand ensenyament d-none d-sm-inline"><img src="'.$this->image_url('departament', 'theme').'" alt="Departament d\'Ensenyament" title="" /></a>';
-        $logos .= '<a href="http://www.xtec.cat" class="brand xtec d-none d-sm-inline"><img src="'.$this->image_url('xtec', 'theme').'" alt="Xarxa Telemàtica Educativa de Catalunya" title="" /></a>';
+        $logos = '<a href="http://ensenyament.gencat.cat/ca/inici/" class="brand ensenyament d-none d-sm-inline"><img src="'.$this->image_url('departament', 'theme').'" alt="Departament d\'Educació" title="" /></a>';
+        $logos .= '<a href="http://xtec.gencat.cat" class="brand xtec d-none d-sm-inline"><img src="'.$this->image_url('xtec', 'theme').'" alt="Xarxa Telemàtica Educativa de Catalunya" title="" /></a>';
 
         return $logos;
     }
 
     public function footer_logos() {
-        $logos = '<a href="http://agora.xtec.cat" target="_blank" class="agora_footer"><img src="'.$this->image_url('logo_main', 'theme').'" alt="Àgora" title="" /></a>';
-        $logos .= '<a href="http://moodle.org" target="_blank" class="moodle_footer" title="Moodle"><img src="'.$this->image_url('moodlelogo').'" alt="'.get_string('moodlelogo').'"/></a>';
-        $logos .= '<a href="http://www20.gencat.cat/portal/site/ensenyament" class="brand ensenyament d-inline d-sm-none"><img src="'.$this->image_url('departament', 'theme').'" alt="Departament d\'Ensenyament" title="" /></a>';
-        $logos .= '<a href="http://www.xtec.cat" class="brand xtec d-inline d-sm-none"><img src="'.$this->image_url('xtec', 'theme').'" alt="Xarxa Telemàtica Educativa de Catalunya" title="" /></a>';
+        $logos = '<a href="https://educaciodigital.cat" target="_blank" class="agora_footer"><img src="'.$this->image_url('logo_main', 'theme').'" alt="Eix" title="" /></a>';
+        $logos .= '<a href="https://moodle.org" target="_blank" class="moodle_footer" title="Moodle"><img src="'.$this->image_url('moodlelogo').'" alt="'.get_string('moodlelogo').'"/></a>';
+        $logos .= '<a href="http://ensenyament.gencat.cat/ca/inici/" class="brand ensenyament d-inline d-sm-none"><img src="'.$this->image_url('departament', 'theme').'" alt="Departament d\'Educació" title="" /></a>';
+        $logos .= '<a href="http://xtec.gencat.cat" class="brand xtec d-inline d-sm-none"><img src="'.$this->image_url('xtec', 'theme').'" alt="Xarxa Telemàtica Educativa de Catalunya" title="" /></a>';
 
         return $logos;
     }
