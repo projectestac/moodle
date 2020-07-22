@@ -608,3 +608,9 @@ a.dimmed + .availabilityinfoXTEC .label-info{
 .block_starredcourses .block-header h5:before {
     content: "\f005";
 }
+
+/* Tables */
+
+th, td {
+    border: none;
+}
