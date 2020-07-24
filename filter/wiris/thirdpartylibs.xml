@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<libraries>
+    <library>
+        <location>integration</location>
+        <name>MathType integration engine</name>
+        <version>7.17.0</version>
+        <license>GPL</license>
+        <licenseversion>3.0+</licenseversion>
+    </library>
+</libraries>
