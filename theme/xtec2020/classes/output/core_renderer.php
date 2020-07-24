@@ -142,10 +142,10 @@ class core_renderer extends \core_renderer {
     }
 
     public function footer_logos() {
-        $logos = '<a href="https://educaciodigital.cat" target="_blank" class="agora_footer d-inline mr-3 ml-3"><img src="'.$this->image_url('logo_main', 'theme').'" alt="Eix" title="" /></a>';
-        $logos .= '<a href="https://moodle.org" target="_blank" class="moodle_footer d-inline mr-3 ml-3" title="Moodle"><img src="'.$this->image_url('moodlelogo').'" alt="'.get_string('moodlelogo').'"/></a>';
-        $logos .= '<a href="http://ensenyament.gencat.cat/ca/inici/" class="brand ensenyament d-inline mr-3 ml-3"><img src="'.$this->image_url('departament', 'theme').'" alt="Departament d\'Educació" title="" /></a>';
-        $logos .= '<a href="http://xtec.gencat.cat" class="brand xtec d-inline ml-3 mr-3"><img src="'.$this->image_url('xtec', 'theme').'" alt="Xarxa Telemàtica Educativa de Catalunya" title="" /></a>';
+        $logos = '<a href="http://ensenyament.gencat.cat/ca/inici/" class="brand ensenyament"><img src="'.$this->image_url('departament', 'theme').'" alt="Departament d\'Educació" title="" /></a>';
+        $logos .= '<a href="http://xtec.gencat.cat" class="brand xtec"><img src="'.$this->image_url('xtec', 'theme').'" alt="Xarxa Telemàtica Educativa de Catalunya" title="" /></a>';
+        $logos .= '<a href="https://educaciodigital.cat" target="_blank" class="agora_footer"><img src="'.$this->image_url('logo_main', 'theme').'" alt="Eix" title="" /></a>';
+        $logos .= '<a href="https://moodle.org" target="_blank" class="moodle_footer" title="Moodle"><img src="'.$this->image_url('moodlelogo').'" alt="'.get_string('moodlelogo').'"/></a>';
 
         return $logos;
     }

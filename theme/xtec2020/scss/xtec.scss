@@ -52,16 +52,26 @@ h4 {
 
 /* Header */
 #page-header {
-    min-height: 93px;
+    // min-height attribute moved to header first child (.row) to avoid fixed height
+    // min-height: 93px;
     margin-top: 50px;
     background-image: url('[[pix:theme|top]]');
-    background-position: 98% center;
+    // Use absolute right margin instead of width percentage
+    // background-position: 98% center;
+    background-position: center right 16px;
     background-repeat: no-repeat;
     background-color: $headerbg;
+
+    .row {
+        min-height: 93px;
+    }
 }
 
 /* Navigation */
 nav.fixed-top.navbar {
+    
+    padding: 0.5rem;
+
     border-bottom: 2px solid $maincolor;
 
     .brand {
@@ -87,12 +97,6 @@ nav.fixed-top.navbar {
         flex-direction: row;
         flex-wrap: nowrap;
     }
-
-    /*
-    .brand.xtec {
-        padding-right: 40px;
-    }
-    */
 }
 
 #main_navigation {
@@ -370,10 +374,10 @@ nav.fixed-top.navbar {
 
 .footerlogos {
     text-align: center;
-    line-height: 2.5rem;
     margin: 8px 0;
     a {
-        margin: 8px 0;
+        display: inline-block;
+        margin: 8px 16px;
     }
 
     .moodle_footer img {
