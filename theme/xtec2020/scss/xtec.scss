@@ -52,16 +52,26 @@ h4 {
 
 /* Header */
 #page-header {
-    min-height: 93px;
+    // min-height attribute moved to header first child (.row) to avoid fixed height
+    // min-height: 93px;
     margin-top: 50px;
     background-image: url('[[pix:theme|top]]');
-    background-position: 98% center;
+    // Use absolute right margin instead of width percentage
+    // background-position: 98% center;
+    background-position: center right 16px;
     background-repeat: no-repeat;
     background-color: $headerbg;
+
+    .row {
+        min-height: 93px;
+    }
 }
 
 /* Navigation */
 nav.fixed-top.navbar {
+    
+    padding: 0.5rem;
+
     border-bottom: 2px solid $maincolor;
 
     .brand {
@@ -71,10 +81,21 @@ nav.fixed-top.navbar {
     .navbar-brand {
         line-height: 28px;
         color: #777;
+        /* Gracefully truncate long site titles */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    .brand.xtec {
-        padding-right: 40px;
+    /* Don't wrap right nav bar*/
+    .navbar-nav {
+        flex-wrap: nowrap;
+    }
+
+    /* Don't wrap nav bar elements*/
+    .navbar-nav li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 }
 
@@ -355,7 +376,8 @@ nav.fixed-top.navbar {
     text-align: center;
     margin: 8px 0;
     a {
-        margin: 8px 0;
+        display: inline-block;
+        margin: 8px 16px;
     }
 
     .moodle_footer img {
@@ -589,4 +611,10 @@ a.dimmed + .availabilityinfoXTEC .label-info{
 
 .block_starredcourses .block-header h5:before {
     content: "\f005";
+}
+
+/* Tables */
+
+th, td {
+    border: none;
 }

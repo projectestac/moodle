@@ -9,10 +9,10 @@
 |mod            |journal             |https://github.com/elearningsoftware/moodle-mod_journal         |2020020700|2020/06/16|17df0cc947304be44f9ceb89e216dfbbc46f8716|
 |mod            |questionnaire       |https://github.com/PoetOS/moodle-mod_questionnaire              |2020062301|2020/06/30|b8137c0227407149d3f8f01c345548d13474feee|
 |mod            |qv                  |https://github.com/projectestac/moodle-mod_qv                   |2019010700|2020/06/16|97620971e6171c7ad89d980072ce4263b1dc349b|
-|block          |rcontent            |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
-|block          |completion_progress |https://github.com/deraadt/moodle-block_completion_progress     |2020033000|2020/06/16|42bbe9728708902b5edcd2203f8054b3a134edf8|
-|block          |courses_vicensvives |https://github.com/vicensvives/moodle-block_courses_vicensvives |2018090100|2020/06/16|25f4c45efdd8404bd415af32d21c1f2d8fb632d1|
-|block          |licenses_vicensvives|https://github.com/vicensvives/moodle-block_licenses_vicensvives|2018090100|2020/06/16|60cf50d20e17b11d4dc266d7a9187b5a915a1b71|
+|mod            |rcontent            |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
+|mod            |completion_progress |https://github.com/deraadt/moodle-block_completion_progress     |2020033000|2020/06/16|42bbe9728708902b5edcd2203f8054b3a134edf8|
+|mod            |courses_vicensvives |https://github.com/vicensvives/moodle-block_courses_vicensvives |2018090100|2020/06/16|25f4c45efdd8404bd415af32d21c1f2d8fb632d1|
+|mod            |licenses_vicensvives|https://github.com/vicensvives/moodle-block_licenses_vicensvives|2018090100|2020/06/16|60cf50d20e17b11d4dc266d7a9187b5a915a1b71|
 |block          |rgrade              |https://github.com/projectestac/Rgrade                          |2016090500|2020/06/16|c18e2da59601367ed473f500cac73d899d1c25da|
 |block          |my_books            |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
 |course format  |simple              |https://github.com/projectestac/moodle-format_simple            |2012121100|2020/06/16|e7246fecfbd50e7d13ac93b38e1801508d82a108|
@@ -42,5 +42,5 @@
 |Type           |Name                |Source                                                          |Version   |Date      | Commit                                 |
 |---------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
 |course format  |grid                |https://github.com/gjb2048/moodle-format_grid                   |2019111702|2020/06/18|f59ed8e561056fb78dde6179837d2b12f80e53d3|
-|theme          |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020042000|2020/06/18|0cf0c1b88550e771fb3f5b15df0ffbeb0ba0a56b|
+|theme          |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020072403|2020/07/24|f732f4bd1cb5a2cc0a76442d863b12570fc81941|
 |mod            |subcourse           |https://github.com/mudrd8mz/moodle-mod_subcourse                |2020071100|2020/07/14|d92f334eddf023cfd815b191899d0afecb8b54e2|
