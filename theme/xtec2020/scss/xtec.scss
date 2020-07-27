@@ -129,6 +129,7 @@ nav.fixed-top.navbar {
 
     .breadcrumb-item + .breadcrumb-item::before {
         content: "▶︎";
+        font-family: auto;
     }
 }
 

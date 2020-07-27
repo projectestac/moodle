@@ -58,7 +58,7 @@ function theme_xtec2020_get_extra_scss($theme) {
 
     // Sets the background image, and its settings.
     if (!empty($imageurl)) {
-        $content .= "#page-header {background-image: url('$imageurl');background-size: contain;}";
+        $content .= "#page-header {background-image: url('$imageurl');}";
     }
 
     // Always return the background image with the scss when we have it.
