@@ -46,15 +46,14 @@
     </div>
 </header>
 <nav id="main_navigation" class="clearfix navbar mb-3" role="navigation">
-    {{#isloggedin}}
-        {{! drawer-toggle moved to navbar (templates/navbar.moustache) }}
-        <ul class="navbar-nav mr-auto">
-            {{{ custom_menu }}}
-        </ul>
-        {{#hasblocks}}
-            <div id="showhideblocks" class="d-none d-sm-block ml-auto collapsed mr-3" title="{{#str}}showhideblocks, theme_xtec2020{{/str}}"></div>
-        {{/hasblocks}}
-    {{/isloggedin}}
+    {{! #isloggedin condition removed. 'custom_menu' should be displayed also in guest mode}}
+    {{! drawer-toggle moved to navbar (templates/navbar.moustache) }}
+    <ul class="navbar-nav mr-auto">
+        {{{ custom_menu }}}
+    </ul>
+    {{#hasblocks}}
+        <div id="showhideblocks" class="d-none d-sm-block ml-auto collapsed mr-3" title="{{#str}}showhideblocks, theme_xtec2020{{/str}}"></div>
+    {{/hasblocks}}
 </nav>
 {{#isloggedin}}
     <div class="container-fluid mb-3">

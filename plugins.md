@@ -36,11 +36,11 @@
 |question type  |wq                  |https://github.com/wiris/moodle-qtype_wq                        |2020061600|2020/06/16|67c0094a7bb995cfd8c15c8dda791cdd37dbd691|
 |question type  |ordering            |https://github.com/gbateson/moodle-qtype_ordering               |2019121400|2020/06/16|e72bcf9c7effbe0718c0687069ee4990cfec1892|
 |report         |coursequotas        |https://github.com/projectestac/moodle-report_coursequotas      |2016091400|2020/06/16|d1e029092f5d5cddd603ab4972209759817ea3ef|
+|theme          |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020080200|2020/08/02|68eff33a9e80c606241126ad51a372fbbf2bba7c|
 
 ## Plugins added for testing purposes
 
 |Type           |Name                |Source                                                          |Version   |Date      | Commit                                 |
 |---------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
 |course format  |grid                |https://github.com/gjb2048/moodle-format_grid                   |2019111702|2020/06/18|f59ed8e561056fb78dde6179837d2b12f80e53d3|
-|theme          |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020072403|2020/07/24|f732f4bd1cb5a2cc0a76442d863b12570fc81941|
 |mod            |subcourse           |https://github.com/mudrd8mz/moodle-mod_subcourse                |2020071100|2020/07/14|d92f334eddf023cfd815b191899d0afecb8b54e2|
