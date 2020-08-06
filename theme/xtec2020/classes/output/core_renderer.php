@@ -259,12 +259,24 @@ class core_renderer extends \core_renderer {
         $content = '';
         foreach ($menu->get_children() as $item) {
             $context = $item->export_for_template($this);
+            $context = self::set_children_uniqids($context);
             $content .= $this->render_from_template('core/custom_menu_item', $context);
         }
 
         return $content;
     }
 
+    public static function set_children_uniqids(object $context){
+        $uniqid = 'id_'.rand(0, 0xFFFFFFFF);
+        $context->uniqid = $uniqid;
+        if($context->haschildren) {
+            foreach ($context->children as $child) {
+                self::set_children_uniqids($child);
+            }
+        }
+        return $context;
+    }
+    
     public function agora_alerts() {
         static $renderized = false;
 
