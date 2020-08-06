@@ -619,3 +619,10 @@ a.dimmed + .availabilityinfoXTEC .label-info{
 th, td {
     border: none;
 }
+
+.nav-item .dropdown-menu {
+    line-height: 1.2;
+    li * {
+        padding-left: 0;
+    }
+}
