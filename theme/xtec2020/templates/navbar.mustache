@@ -52,4 +52,39 @@
         </ul>
         <!-- search_box -->
 </nav>
-
+{{^element.frozen}}
+{{#js}}
+  require(['jquery'], function($) {
+    $(function () {
+      // Hide all submenus
+      $('.nav-item .dropdown-menu ul').css({ display: 'none'});
+      // Store a reference to the currently deployed submenu
+      document.$currentSubMenu = null;
+      // Show the little triangle near items that are submenu headers
+      $('.nav-item .dropdown-item[id]').addClass('dropdown-toggle');
+      // Define the click handler
+      $('.nav-item .dropdown-item').click((ev) => {
+        const id = ev.target.id;
+        if (id) {
+          // Dropdown items with 'id' are submenu headers
+          ev.stopPropagation();
+          ev.preventDefault();
+          // Find the target submenu
+          $targetMenu = $(`ul[aria-labelledby=${id}]`);
+          if ($targetMenu.length) {
+            // Hide the current submenu if not ancestor of the target
+            if (document.$currentSubMenu && !$.contains(document.$currentSubMenu[0], $targetMenu[0]))
+              document.$currentSubMenu.css({ display: 'none' });
+            // Store the current submenu for later reference
+            document.$currentSubMenu = $targetMenu;
+            // Display the submenu
+            $targetMenu.css({ display: 'inherit' });
+          }
+          else
+            console.log('Warning: submenu without items');
+        }
+      });
+    });
+  });
+{{/js}}
+{{/element.frozen}}

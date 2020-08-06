@@ -620,8 +620,13 @@ th, td {
     border: none;
 }
 
+/* Submenus in custom menu */
+
 .nav-item .dropdown-menu {
     line-height: 1.2;
+    ul {
+        list-style: none;
+    }
     li * {
         padding-left: 0;
     }
