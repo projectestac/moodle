@@ -111,6 +111,7 @@ nav.fixed-top.navbar {
     .navbar-nav {
         margin-left: 1em;
         flex-direction: row;
+        overflow-x: auto;
         .nav-link {
             padding: 8px 15px;
             margin: 0;
@@ -620,10 +621,9 @@ th, td {
     border: none;
 }
 
-/* Submenus in custom menu */
+/* Custom menu */
 
 .nav-item .dropdown-menu {
-    line-height: 1.2;
     ul {
         list-style: none;
     }
