@@ -57,13 +57,13 @@
   require(['jquery'], function($) {
     $(function () {
       // Hide all submenus
-      $('.nav-item .dropdown-menu ul').css({ display: 'none'});
+      $('#main_navigation .nav-item .dropdown-menu ul').css({ display: 'none'});
       // Store a reference to the currently deployed submenu
       document.$currentSubMenu = null;
       // Show the little triangle near items that are submenu headers
-      $('.nav-item .dropdown-item[id]').addClass('dropdown-toggle');
+      $('#main_navigation .nav-item .dropdown-item[id]').addClass('dropdown-toggle');
       // Define the click handler
-      $('.nav-item .dropdown-item').click((ev) => {
+      $('#main_navigation .nav-item .dropdown-item').click((ev) => {
         const id = ev.target.id;
         if (id) {
           // Dropdown items with 'id' are submenu headers
