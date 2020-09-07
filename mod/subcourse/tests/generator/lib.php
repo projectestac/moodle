@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,17 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin meta-data
+ * Provides the {@see mod_subcourse_generator} class.
  *
  * @package     mod_subcourse
- * @copyright   2008 David Mudrak <david@moodle.com>
+ * @copyright   2020 David Mudrák <david@moodle.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->component = 'mod_subcourse';
-$plugin->release = '9.0.0';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2020090601;
-$plugin->requires = 2017051500;
+/**
+ * Subcourse module data generator.
+ *
+ * @copyright 2020 David Mudrák <david@moodle.com>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class mod_subcourse_generator extends testing_module_generator {
+}

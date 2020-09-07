@@ -38,7 +38,7 @@ require_once($CFG->libdir.'/gradelib.php');
  * @return array list of course records
  */
 function subcourse_available_courses($userid = null) {
-    global $COURSE, $USER, $DB;
+    global $COURSE, $USER;
 
     $courses = array();
 
@@ -222,7 +222,7 @@ function subcourse_grades_update($courseid, $subcourseid, $refcourseid, $itemnam
 
     $result = grade_update('mod/subcourse', $courseid, 'mod', 'subcourse', $subcourseid, 0, $grades, $params);
 
-    // The {@link grade_update()} does not change the grade hidden state so we need to perform it manually now.
+    // The {@see grade_update()} does not change the grade hidden state so we need to perform it manually now.
     if (!$gradeitemonly && $result == GRADE_UPDATE_OK) {
         $gi = grade_item::fetch([
             'source' => 'mod/subcourse',
@@ -236,9 +236,11 @@ function subcourse_grades_update($courseid, $subcourseid, $refcourseid, $itemnam
         $gs = grade_grade::fetch_all(['itemid' => $gi->id]);
 
         foreach ($gs as $g) {
-            if ($refgrades->grades[$g->userid]->hidden != $g->hidden) {
-                $g->grade_item = $gi;
-                $g->set_hidden($refgrades->grades[$g->userid]->hidden);
+            if (isset($refgrades->grades[$g->userid])) {
+                if ($refgrades->grades[$g->userid]->hidden != $g->hidden) {
+                    $g->grade_item = $gi;
+                    $g->set_hidden($refgrades->grades[$g->userid]->hidden);
+                }
             }
         }
     }
@@ -305,4 +307,54 @@ function subcourse_update_timefetched($subcourseids, $time = null) {
  */
 function subcourse_get_fetched_item_fields() {
     return array('gradetype', 'grademax', 'grademin', 'scaleid', 'hidden');
+}
+
+/**
+ * Return if the user has a grade for the activity and the string representation of the grade.
+ *
+ * @param stdClass $subcourse Subcourse activity record with id and course properties set
+ * @param int $userid User id to get the grade for
+ * @return string $strgrade
+ */
+function subcourse_get_current_grade(stdClass $subcourse, int $userid): ?string {
+
+    $currentgrade = grade_get_grades($subcourse->course, 'mod', 'subcourse', $subcourse->id, $userid);
+    $strgrade = null;
+
+    if (!empty($currentgrade->items[0]->grades)) {
+        $currentgrade = reset($currentgrade->items[0]->grades);
+
+        if (isset($currentgrade->grade) && !($currentgrade->hidden)) {
+            $strgrade = $currentgrade->str_grade;
+        }
+    }
+
+    return $strgrade;
+}
+
+/**
+ * Mark the course module as viewed by the user.
+ *
+ * @param stdClass $subcourse Subcourse record.
+ * @param context $context Course module context.
+ * @param stdClass $course Course record.
+ * @param cm_info|object $cm Course module info.
+ */
+function subcourse_set_module_viewed(stdClass $subcourse, context $context, stdClass $course, $cm) {
+    global $CFG;
+    require_once($CFG->libdir . '/completionlib.php');
+
+    $completion = new completion_info($course);
+    $completion->set_module_viewed($cm);
+
+    $event = \mod_subcourse\event\course_module_viewed::create([
+        'objectid' => $subcourse->id,
+        'context' => $context,
+    ]);
+
+    $event->add_record_snapshot('course_modules', $cm);
+    $event->add_record_snapshot('course', $course);
+    $event->add_record_snapshot('subcourse', $subcourse);
+
+    $event->trigger();
 }
