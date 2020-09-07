@@ -31,23 +31,24 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+// Import all available 'subfilters'.
 require_once('subfilters/php.php');
-require_once('subfilters/mathjax.php');
+require_once('subfilters/client.php');
 
 class filter_wiris extends moodle_text_filter {
     public function filter($text, array $options = array()) {
 
         switch (get_config('filter_wiris', 'rendertype')) {
-            case 'mathjax':
-                $subfilter = new filter_wiris_mathjax($this->context, $this->localconfig);
-                break;
+            // Client-side render: Uses the Javascript third-party lib.
+            case 'client':
+                $subfilter = new filter_wiris_client($this->context, $this->localconfig);
+            break;
+            // Server-sider render: Uses the PHP third-party lib (default).
             case 'php':
             default:
                 $subfilter = new filter_wiris_php($this->context, $this->localconfig);
-                break;
+            break;
         }
-
         return $subfilter->filter($text, $options);
-
     }
 }

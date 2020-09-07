@@ -17,7 +17,7 @@
 |block          |my_books            |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
 |course format  |simple              |https://github.com/projectestac/moodle-format_simple            |2012121100|2020/06/16|e7246fecfbd50e7d13ac93b38e1801508d82a108|
 |course format  |vv                  |https://github.com/vicensvives/moodle-format_vicensvives        |2018090100|2020/06/16|5fda6709ce041bb9c46c970b1784696bc179de83|
-|filter         |wiris               |https://github.com/wiris/moodle-filter_wiris                    |2020070400|2020/07/04|e98fb0303c81eac34464b713af00d5702d8ede9d|
+|filter         |wiris               |https://github.com/wiris/moodle-filter_wiris                    |2020090300|2020/09/07|07b99b3ed37fcebb6a5b0467250144b88a00ddc2|
 |atto           |cloze               |https://github.com/dthies/moodle-atto_cloze                     |2017072802|2020/06/16|eacc7d4069cefa59000053f773e0b5bb291b3cdb|
 |atto           |fontfamily          |https://github.com/projectestac/moodle-atto_fontfamily          |2020010600|2020/06/16|ad87cd2a5bee9f087d5f3026043c9d62dcaaed97|
 |atto           |fontsize            |https://github.com/andrewnicols/moodle-atto_fontsize            |2015042701|2020/06/16|d6b5551a99c35e60f2a2887c181cb3c574c258b1|
