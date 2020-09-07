@@ -1,11 +1,14 @@
-@filter @filter_wiris
+@filter @filter_wiris @filter_wiris_render @filter_wiris_render_image
 Feature: Check image format
 In order to check image formats (png, svg)
 As an admin
 I need to see the correct image format
 
   Background:
-    Given the "wiris" filter is "on"
+    Given the following config values are set as admin:
+      | config | value | plugin |
+      | imageformat | svg | filter_wiris |
+    And the "wiris" filter is "on"
     And I log in as "admin"
 
   @javascript
