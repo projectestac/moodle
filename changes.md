@@ -1,3 +1,8 @@
+### 3.9.1+ (Build: 20200903)
+#### Updates
+- Updated `mod/subcourse` to 9.0.0
+
+
 ### v3.9.1 (2020-07-16)
 #### Updates
 - Based on Moodle 3.9.1

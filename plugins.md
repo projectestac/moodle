@@ -43,4 +43,4 @@
 |Type           |Name                |Source                                                          |Version   |Date      | Commit                                 |
 |---------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
 |course format  |grid                |https://github.com/gjb2048/moodle-format_grid                   |2019111702|2020/06/18|f59ed8e561056fb78dde6179837d2b12f80e53d3|
-|mod            |subcourse           |https://github.com/mudrd8mz/moodle-mod_subcourse                |2020071100|2020/07/14|d92f334eddf023cfd815b191899d0afecb8b54e2|
+|mod            |subcourse           |https://github.com/mudrd8mz/moodle-mod_subcourse                |2020090601|2020/09/07|d417a26f177c113e242018b88d2d5e681bebf2d2|
