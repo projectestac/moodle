@@ -3,6 +3,7 @@
 - Updated `mod/subcourse` to 9.0.0
 - Updated `filter/wiris` to 7.24.0
 - Updated `atto/wiris` to 7.24.0
+- Updated `mod/geogebra` to 3.6.1
 
 ### v3.9.1 (2020-07-16)
 #### Updates

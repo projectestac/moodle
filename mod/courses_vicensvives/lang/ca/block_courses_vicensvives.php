@@ -37,7 +37,7 @@ $string['configmaxcourses'] = 'Nombre de cursos que es mostra en el bloc.';
 $string['configmoodlews'] = 'Servei web de Moodle';
 $string['configmoodlewsdesc'] = 'Es configurarà el servei web de Moodle i se sincronitzarà el token amb Vicens Vives.';
 
-// Errors
+// Errors.
 $string['wsnotconfigured'] = 'El servei web de Vicens Vives no està configurat.';
 $string['wsauthfailed'] = "Ha fallat l'autentificació amb el servei web de Vicens Vives. ";
 $string['wsunknownerror'] = 'Hi ha hagut un error inesperat en connectar amb el servei web de Vicens Vives.';
@@ -59,7 +59,7 @@ $string['searchresult'] = '{$a->found} de {$a->total} llibres';
 $string['searchempty'] = '{$a} llibres';
 $string['standardformat'] = 'Estàndard de Moodle (per unitats)';
 
-// Tabla libros
+// Tabla libros.
 $string['fullname'] = 'Nom';
 $string['subject'] = 'Assignatura';
 $string['level'] = 'Nivell';
@@ -80,14 +80,17 @@ $string['nofetchbook'] = "No s'hi ha pogut obtenir el llibre";
 $string['nocreatecourse'] = "No s'hi ha pogut crear el curs";
 $string['nocreatestructure'] = "No s'hi ha pogut crear l'estructura del curs";
 
-// Actualizar curso
+// Actualizar curso.
 $string['updateingcourse'] = 'Actualitzant curs';
 $string['updatedunits'] = 'Unitats afegides o actualitzades';
 $string['noupdatedunits'] = 'No hi ha actualitzacions per a aquest llibre.';
 
-// Permisos
+// Permisos.
 $string['courses_vicensvives:addinstance'] = 'Crear instància del bloc.';
 $string['courses_vicensvives:myaddinstance'] = 'Crear instància del bloc en my.';
 
-// Event
+// Event.
 $string['eventwebservicecalled'] = 'Servei web cridat';
+
+// Generate content.
+$string['generatingcontent'] = 'Generant contingut:';
