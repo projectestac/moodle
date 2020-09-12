@@ -22,7 +22,7 @@ require_once($CFG->dirroot.'/lib/tablelib.php');
 require_once($CFG->dirroot.'/blocks/courses_vicensvives/locallib.php');
 
 function str_contains($haystack, $needle) {
-    // Normaliza el texto a carñacteres ASCII en mínuscula y sin espacios duplicados
+    // Normaliza el texto a carácteres ASCII en mínuscula y sin espacios duplicados.
     $normalize = function($text) {
         $text = core_text::specialtoascii($text);
         $text = core_text::strtolower($text);
@@ -72,12 +72,12 @@ try {
         $allbooks[$book->idBook] = $book;
     }
 
-// Para el filtrado de allbooks para solo mostrar mis libros con licencia.
+    // Para el filtrado de allbooks para solo mostrar mis libros con licencia.
     $licensesbooks = array();
     foreach ($ws->licenses() as $license) {
         $licensesbooks[$license->idBook] = $license;
     }
-// Fin obtención de licencias para filtrado
+    // Fin obtención de licencias para filtrado.
 
 } catch (vicensvives_ws_error $e) {
     echo $OUTPUT->header();
@@ -86,11 +86,9 @@ try {
     exit;
 }
 
-// Filtrar allbooks para solo mostrar mis lobros con licencia:
-
+// Filtrar allbooks para solo mostrar mis lobros con licencia:.
 $allbooks = array_intersect_key($allbooks, $licensesbooks);
-
-// Fin filtrado
+// Fin filtrado.
 
 if ($bookid = optional_param('create', false, PARAM_INT)) {
     if (!isset($allbooks[$bookid])) {
@@ -217,16 +215,17 @@ foreach ($filteredbooks as $book) {
     $rows[] = $row;
 }
 
-// Ordenación
+// Ordenación.
 foreach ($table->get_sort_columns() as $column => $order) {
     core_collator::asort_objects_by_property($rows, $column);
     if ($order == SORT_DESC) {
         $rows = array_reverse($rows);
     }
-    break; // Ordenación sólo por el primer criterio
+    break;
+    // Ordenación sólo por el primer criterio.
 }
 
-// Paginación
+// Paginación.
 $rows = array_slice($rows, $table->get_page_start(), $table->get_page_size());
 
 foreach ($rows as $row) {

@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die;
+
 require_once($CFG->libdir.'/adminlib.php');
 
 /**
@@ -38,7 +40,7 @@ class courses_vicensvives_setting_wscheck extends admin_setting {
     public function output_html($data, $query='') {
         $errors = array();
 
-        // Comprueba la conexión con el web service de Vicens Vives
+        // Comprueba la conexión con el web service de Vicens Vives.
         $ws = new vicensvives_ws();
         try {
             $ws->books();
@@ -46,7 +48,7 @@ class courses_vicensvives_setting_wscheck extends admin_setting {
             $errors[] = html_writer::tag('div', $e->getMessage(), array('class' => 'alert alert-danger'));
         }
 
-        // Comprueba si el plugin local del web service está instalado
+        // Comprueba si el plugin local del web service está instalado.
         if (!courses_vicensvives_setting_moodlews::get_service()) {
             $message = get_string('moodlewsnotinstalled', 'block_courses_vicensvives');
             $errors[] = html_writer::tag('div', $message, array('class' => 'alert alert-danger'));
@@ -55,13 +57,13 @@ class courses_vicensvives_setting_wscheck extends admin_setting {
         $adminroot = admin_get_root();
 
         if (!$errors) {
-            // Comprueba si el web service está configurado
+            // Comprueba si el web service está configurado.
             if (!courses_vicensvives_setting_moodlews::is_enabled()) {
                 $message = get_string('moodlewsnotenabled', 'block_courses_vicensvives');
                 $errors[] = html_writer::tag('div', $message, array('class' => 'alert alert-danger'));
             }
 
-            // Comprueba si ha habido un error en enviar el token
+            // Comprueba si ha habido un error en enviar el token.
             if (array_key_exists('s__vicensvives_moodlews', $adminroot->errors)) {
                 $message = $adminroot->errors['s__vicensvives_moodlews']->error;
                 $errors[] = html_writer::tag('div', $message, array('class' => 'alert alert-danger'));
@@ -97,7 +99,7 @@ class courses_vicensvives_setting_moodlews extends admin_setting {
     public function get_setting() {
         $value = get_config($this->plugin, $this->name);
         if ($value === false) {
-            // Parámetro no configurado (en instalar)
+            // Parámetro no configurado (en instalar).
             return null;
         }
         return true;
@@ -109,7 +111,7 @@ class courses_vicensvives_setting_moodlews extends admin_setting {
     }
 
     public function write_setting($data) {
-        // Marcamos el parámetro como configurado
+        // Marcamos el parámetro como configurado.
         set_config($this->name, '1', $this->plugin);
 
         if (vicensvives_ws::configured() and self::get_service()) {
@@ -128,30 +130,30 @@ class courses_vicensvives_setting_moodlews extends admin_setting {
     public static function is_enabled() {
         global $CFG;
 
-        // Web services activados
+        // Web services activados.
         if (empty($CFG->enablewebservices)) {
             return false;
         }
 
-        // Protocolo REST
+        // Protocolo REST.
         $protocols = explode(',', get_config('core', 'webserviceprotocols'));
         if (!in_array(self::PROTOCOL, $protocols)) {
             return false;
         }
 
-        // Servicio activado
+        // Servicio activado.
         $service = self::get_service();
         if (!$service or !$service->enabled) {
             return false;
         }
 
-        // Usuario
+        // Usuario.
         $userid = self::get_user_id();
         if (!$userid) {
             return false;
         }
 
-        // Rol
+        // Rol.
         $roleid = self::get_role_id();
         if (!$roleid) {
             return false;
@@ -167,7 +169,7 @@ class courses_vicensvives_setting_moodlews extends admin_setting {
             return false;
         }
 
-        // Token
+        // Token.
         if (!self::get_token($service, $userid)) {
             return false;
         }
@@ -182,23 +184,23 @@ class courses_vicensvives_setting_moodlews extends admin_setting {
 
         $context = context_system::instance();
 
-        // Web services activados
+        // Web services activados.
         set_config('enablewebservices', true);
 
-        // Protocolo REST
+        // Protocolo REST.
         $protocols = explode(',', get_config('core', 'webserviceprotocols'));
         if (!in_array(self::PROTOCOL, $protocols)) {
             $protocols[] = self::PROTOCOL;
             set_config('webserviceprotocols', trim(implode(',', $protocols), ','));
         }
 
-        // Servicio
+        // Servicio.
         $service = self::get_service();
         if (!$service->enabled) {
             $DB->set_field('external_services', 'enabled', 1, array('id' => $service->id));
         }
 
-        // Usuario
+        // Usuario.
         $userid = self::get_user_id();
         if (!$userid) {
             $user = new stdClass;
@@ -211,7 +213,7 @@ class courses_vicensvives_setting_moodlews extends admin_setting {
             $userid = user_create_user($user, false);
         }
 
-        // Rol
+        // Rol.
         $roleid = self::get_role_id();
         if (!$roleid) {
             $roleid = create_role(self::ROLENAME, self::ROLESHORTNAME, '');
@@ -223,10 +225,10 @@ class courses_vicensvives_setting_moodlews extends admin_setting {
         $context->mark_dirty();
         role_assign($roleid, $userid, $context->id);
 
-        // Token
+        // Token.
         $token = self::get_token($service, $userid);
 
-        // Crea el token en activar
+        // Crea el token en activar.
         if (!$token) {
             $token = md5(uniqid(rand(), 1));
             $record = new stdClass();
@@ -240,7 +242,7 @@ class courses_vicensvives_setting_moodlews extends admin_setting {
             $DB->insert_record('external_tokens', $record);
         }
 
-        // Emvía el token a Vicens Vives
+        // Emvía el token a Vicens Vives.
         try {
             $ws = new vicensvives_ws();
             $ws->send_token($token);

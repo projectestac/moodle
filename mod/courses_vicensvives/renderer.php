@@ -23,8 +23,9 @@ class block_courses_vicensvives_renderer extends plugin_renderer_base {
 
         $context = context_course::instance($course->id);
 
-        // Rewrite file URLs so that they are correct
-        $course->summary = file_rewrite_pluginfile_urls($course->summary, 'pluginfile.php', $context->id, 'course', 'summary', null);
+        // Rewrite file URLs so that they are correct.
+        $course->summary = file_rewrite_pluginfile_urls($course->summary,
+            'pluginfile.php', $context->id, 'course', 'summary', null);
 
         $output .= html_writer::start_tag('div', array('class' => 'vicensvives_course clearfix'));
         $output .= html_writer::start_tag('div', array('class' => 'vicensvives_course_left'));
@@ -50,7 +51,7 @@ class block_courses_vicensvives_renderer extends plugin_renderer_base {
         }
         $output .= html_writer::end_tag('ul');
 
-        $output .= html_writer::end_tag('div'); // End of info div
+        $output .= html_writer::end_tag('div'); // End of info div.
 
         $context = context_coursecat::instance($CFG->block_courses_vicensvives_defaultcategory);
         if (has_capability('moodle/course:create', $context)) {
@@ -69,14 +70,14 @@ class block_courses_vicensvives_renderer extends plugin_renderer_base {
             $course->summaryformat = FORMAT_MOODLE;
         }
         $output .= format_text($course->summary, $course->summaryformat, $options,  $course->id);
-        $output .= html_writer::end_tag('div'); // End of summary div
+        $output .= html_writer::end_tag('div'); // End of summary div.
 
-        $output .= html_writer::end_tag('div'); // End of coursebox div
+        $output .= html_writer::end_tag('div'); // End of coursebox div.
 
         return $output;
     }
 
-    // Esta función es diferente para cada versión de Moodle
+    // Esta función es diferente para cada versión de Moodle.
     private function get_course_contacts($course) {
         global $CFG;
         require_once($CFG->libdir. '/coursecatlib.php');

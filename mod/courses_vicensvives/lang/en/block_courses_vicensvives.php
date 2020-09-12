@@ -37,7 +37,7 @@ $string['configmaxcourses'] = 'Número de cursos que se muestra en el bloque.';
 $string['configmoodlews'] = 'Web service de Moodle';
 $string['configmoodlewsdesc'] = 'Se configurará el web service de Moodle y se sincronizará el token con Vicens Vives.';
 
-// Errors
+// Errors.
 $string['wsnotconfigured'] = 'El Web Service de Vicens Vives no está configurado.';
 $string['wsauthfailed'] = 'Ha fallado la autentificación con el Web Service de Vicens Vives.';
 $string['wsunknownerror'] = 'Se ha producido un error inesperado en conectar con el Web Service de Vicens Vives.';
@@ -59,7 +59,7 @@ $string['searchresult'] = '{$a->found} de {$a->total} libros';
 $string['searchempty'] = '{$a} libros';
 $string['standardformat'] = 'Estándar de Moodle (por temas)';
 
-// Tabla libros
+// Tabla libros.
 $string['fullname'] = 'Nombre';
 $string['subject'] = 'Materia';
 $string['level'] = 'Nivel';
@@ -80,17 +80,20 @@ $string['nofetchbook'] = 'No se ha podido obtener el libro';
 $string['nocreatecourse'] = 'Nos se ha podido crear el curso';
 $string['nocreatestructure'] = 'No se ha podido crear la estructura del curso';
 
-// Actualizar curso
+// Actualizar curso.
 $string['updateingcourse'] = 'Actualizando curso';
 $string['updatedunits'] = 'Unidades añadidas o actualizadas';
 $string['noupdatedunits'] = 'No hay actualizaciones para este libro.';
 
-// Permisos
+// Permisos.
 $string['courses_vicensvives:addinstance'] = 'Crear instancia del bloque.';
 $string['courses_vicensvives:myaddinstance'] = 'Crear instancia del bloque en my.';
 
-// Event
+// Event.
 $string['eventwebservicecalled'] = 'Web service llamado';
 
-// Privacy
+// Privacy.
 $string['privacy:metadata'] = 'The Courses Vicens Vives block only shows data stored in other locations.';
+
+// Generate content.
+$string['generatingcontent'] = 'Generating content:';

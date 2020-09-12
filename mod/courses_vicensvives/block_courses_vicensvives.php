@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die();
+
 require_once($CFG->dirroot . '/course/lib.php');
 
 class block_courses_vicensvives extends block_list {
@@ -65,7 +67,7 @@ class block_courses_vicensvives extends block_list {
             return $this->content;
         }
 
-        // Profesores y gestores
+        // Profesores y gestores.
         $contextcat = context_coursecat::instance($CFG->block_courses_vicensvives_defaultcategory);
         if (isloggedin() and !isguestuser()) {
             $mycourses = enrol_get_my_courses(null, 'visible DESC, fullname ASC');
@@ -118,7 +120,11 @@ class block_courses_vicensvives extends block_list {
         return 'navigation';
     }
 
-    function applicable_formats() {
-        return array('all' => false,'site' => true);
+    public function applicable_formats() {
+        return array(
+            'all' => false,
+            'site' => true,
+            'my' => true
+        );
     }
 }

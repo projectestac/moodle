@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die();
+
 class vicensvives_ws {
 
     const WS_URL = 'http://api.vicensvivesdigital.com/rest';
@@ -28,10 +30,6 @@ class vicensvives_ws {
         if (!$bookid) {
             return null;
         }
-// global $CFG;
-// $json = file_get_contents( $CFG->wwwroot . '/blocks/courses_vicensvives/test/test.json');
-// return json_decode($json);
-
         return $this->call('get', 'books/' . $bookid, array('lti_info' => "true"));
     }
 
@@ -103,18 +101,18 @@ class vicensvives_ws {
 
         list($status, $response) = $this->curl($method, $path, $params);
 
-        // El token no existe o ha caducado
+        // El token no existe o ha caducado.
         if ($status == 401 and isset($response->cod) and $response->cod == 401007) {
             $this->refresh_token();
             list($status, $response) = $this->curl($method, $path, $params);
         }
 
-        // Credenciales ya usadas en otro sitio (schools/moodle)
+        // Credenciales ya usadas en otro sitio (schools/moodle).
         if ($status == 401 and isset($response->cod) and $response->cod == 401025) {
             throw new vicensvives_ws_error('wssitemismatch');
         }
 
-        // Error desconocido
+        // Error desconocido.
         if ($status != 200) {
             throw new vicensvives_ws_error('wsunknownerror');
         }
@@ -158,7 +156,7 @@ class vicensvives_ws {
             $header[] = 'Authorization: Bearer ' . $CFG->vicensvives_accesstoken;
         }
 
-        // La llamada schools/moodle requiere los parámetros en formato JSON
+        // La llamada schools/moodle requiere los parámetros en formato JSON.
         if ($path == 'schools/moodle') {
             $json = json_encode($params);
             $header[] = 'Content-Type: application/json';
