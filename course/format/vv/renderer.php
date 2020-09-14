@@ -33,7 +33,8 @@ class format_vv_renderer extends format_topics_renderer {
     }
 
     /**
-     * Generate the section title, wraps it in a link to the section page if page is to be displayed on a separate page
+     * Generate the section title, wraps it in a link to the section page if page is to be displayed
+     * on a separate page
      *
      * @param stdClass $section The course_section entry from DB
      * @param stdClass $course The course entry from DB
@@ -64,7 +65,6 @@ class format_vv_renderer extends format_topics_renderer {
      * @param array $modnamesused (argument not used)
      */
     public function print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused) {
-        global $PAGE;
 
         $modinfo = get_fast_modinfo($course);
         $course = course_get_format($course)->get_course();
@@ -75,16 +75,16 @@ class format_vv_renderer extends format_topics_renderer {
         $coursefullname = format_string($course->fullname, true, array('context' => $context));
         echo html_writer::tag('div', $coursefullname, array('class' => 'vv-title'));
 
-        // Copy activity clipboard..
+        // Copy activity clipboard.
         echo $this->course_activity_clipboard($course, 0);
 
-        // Now the list of sections..
+        // Now the list of sections.
         echo $this->start_section_list();
 
         foreach ($modinfo->get_section_info_all() as $section => $thissection) {
             if ($section == 0) {
-                // 0-section is displayed a little different then the others
-                if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
+                // 0-section is displayed a little different then the others.
+                if ($thissection->summary or !empty($modinfo->sections[0]) or $this->page->user_is_editing()) {
                     echo $this->section_header($thissection, $course, false, 0);
                     echo $this->courserenderer->course_section_cm_list($course, $thissection, 0);
                     echo $this->courserenderer->course_section_add_cm_control($course, 0, 0);
@@ -93,11 +93,11 @@ class format_vv_renderer extends format_topics_renderer {
                 continue;
             }
             if ($section > $course->numsections) {
-                // activities inside this section are 'orphaned', this section will be printed as 'stealth' below
+                // Activities inside this section are orphaned, this section will be printed as stealth below.
                 continue;
             }
-            // Show the section if the user is permitted to access it, OR if it's not available
-            // but there is some available info text which explains the reason & should display.
+            // Show the section if the user is permitted to access it, OR if it's not available,
+            // But there is some available info text which explains the reason & should display.
             $showsection = $thissection->uservisible ||
                     ($thissection->visible && !$thissection->available &&
                     !empty($thissection->availableinfo));
@@ -120,11 +120,11 @@ class format_vv_renderer extends format_topics_renderer {
             echo $this->section_footer();
         }
 
-        if ($PAGE->user_is_editing() and has_capability('moodle/course:update', $context)) {
+        if ($this->page->user_is_editing() and has_capability('moodle/course:update', $context)) {
             // Print stealth sections if present.
             foreach ($modinfo->get_section_info_all() as $section => $thissection) {
                 if ($section <= $course->numsections or empty($modinfo->sections[$section])) {
-                    // this is not stealth section or it is empty
+                    // This is not stealth section or it is empty.
                     continue;
                 }
                 echo $this->stealth_section_header($section);
@@ -183,8 +183,6 @@ class format_vv_renderer extends format_topics_renderer {
      * @return string HTML to output.
      */
     protected function section_header($section, $course, $onsectionpage, $sectionreturn=null) {
-        global $PAGE;
-
         $o = '';
         $currenttext = '';
         $sectionstyle = '';
@@ -200,10 +198,10 @@ class format_vv_renderer extends format_topics_renderer {
             'class' => 'vv-section clearfix'.$sectionstyle, 'role' => 'region',
             'aria-label' => get_section_name($course, $section)));
 
-        // When not on a section page, we display the section titles except the general section if null
+        // When not on a section page, we display the section titles except the general section if null.
         $hasnamenotsecpg = (!$onsectionpage && ($section->section != 0 || !is_null($section->name)));
 
-        // When on a section page, we only display the general section title, if title is not the default one
+        // When on a section page, we only display the general section title, if title is not the default one.
         $hasnamesecpg = ($onsectionpage && ($section->section == 0 && !is_null($section->name)));
 
         // Ocultar despliegue en secciones vacías.
@@ -224,7 +222,7 @@ class format_vv_renderer extends format_topics_renderer {
         $edit = '';
 
         $context = context_course::instance($course->id);
-        if ($PAGE->user_is_editing() && has_capability('moodle/course:update', $context)) {
+        if ($this->page->user_is_editing() && has_capability('moodle/course:update', $context)) {
             $url = new moodle_url('/course/editsection.php', array('id' => $section->id, 'sr' => $sectionreturn));
             $edit .= html_writer::start_tag('span', array('class' => 'commands'));
             if ($section->section != 0) {
@@ -265,8 +263,10 @@ class format_vv_renderer extends format_topics_renderer {
      */
     protected function stealth_section_header($sectionno) {
         $o = '';
-        $o .= html_writer::start_tag('li', array('id' => 'section-'.$sectionno, 'class' => 'section main clearfix orphaned hidden'));
-        $o .= $this->output->heading(get_string('orphanedactivitiesinsectionno', '', $sectionno), 3, 'sectionname');
+        $o .= html_writer::start_tag('li', array('id' => 'section-' . $sectionno,
+            'class' => 'section main clearfix orphaned hidden'));
+        $o .= $this->output->heading(get_string('orphanedactivitiesinsectionno', '', $sectionno),
+            3, 'sectionname');
         return $o;
     }
 
@@ -288,9 +288,7 @@ class format_vv_renderer extends format_topics_renderer {
      * @return array of links with edit controls
      */
     protected function section_edit_controls($course, $section, $onsectionpage = false) {
-        global $PAGE;
-
-        if (!$PAGE->user_is_editing()) {
+        if (!$this->page->user_is_editing()) {
             return array();
         }
 
@@ -361,21 +359,21 @@ class format_vv_course_renderer extends core_course_renderer {
         }
         $completioninfo = new completion_info($course);
 
-        // check if we are currently in the process of moving a module with JavaScript disabled
+        // Check if we are currently in the process of moving a module with JavaScript disabled.
         $ismoving = $this->page->user_is_editing() && ismoving($course->id);
         if ($ismoving) {
             $movingpix = new pix_icon('movehere', get_string('movehere'), 'moodle', array('class' => 'movetarget'));
             $strmovefull = strip_tags(get_string("movefull", "", "'$USER->activitycopyname'"));
         }
 
-        // Get the list of modules visible to user (excluding the module being moved if there is one)
+        // Get the list of modules visible to user (excluding the module being moved if there is one).
         $moduleshtml = array();
         if (!empty($modinfo->sections[$section->section])) {
             foreach ($modinfo->sections[$section->section] as $modnumber) {
                 $mod = $modinfo->cms[$modnumber];
 
                 if ($ismoving and $mod->id == $USER->activitycopy) {
-                    // do not display moving mod
+                    // Do not display moving mod.
                     continue;
                 }
 
@@ -449,7 +447,9 @@ class format_vv_course_renderer extends core_course_renderer {
      * @param array $displayoptions
      * @return String
      */
-    public function course_section_cm_list_item($course, &$completioninfo, cm_info $mod, $sectionreturn, $displayoptions = array()) {
+    public function course_section_cm_list_item($course, &$completioninfo, cm_info $mod, $sectionreturn,
+        $displayoptions = array()) {
+
         $output = '';
 
         if ($mod->modname == 'label') {
@@ -463,7 +463,7 @@ class format_vv_course_renderer extends core_course_renderer {
                 $labelnum = $match[1];
                 $labelname = trim($match[2]);
             }
-            // Formato de versiones anteriores
+            // Formato de versiones anteriores.
             if (preg_match('/^\[(\w+)\]( .*)$/', trim($mod->name), $match)) {
                 $labelnum = $match[1];
                 $labelname = $match[2];
@@ -485,9 +485,12 @@ class format_vv_course_renderer extends core_course_renderer {
             return html_writer::tag('h4', $icons . $number . $name, array('class' => 'vv-subsectionname'));
         }
 
-        if ($modulehtml = $this->course_section_cm($course, $completioninfo, $mod, $sectionreturn, $displayoptions)) {
-            $modclasses = 'vv-activity ' . $mod->modname . ' modtype_' . $mod->modname . ' ' . $mod->extraclasses;
-            $output .= html_writer::tag('li', $modulehtml, array('class' => $modclasses, 'id' => 'module-' . $mod->id));
+        if ($modulehtml = $this->course_section_cm($course, $completioninfo, $mod, $sectionreturn,
+                $displayoptions)) {
+            $modclasses = 'vv-activity ' . $mod->modname . ' modtype_' . $mod->modname .
+                ' ' . $mod->extraclasses;
+            $output .= html_writer::tag('li', $modulehtml,
+                array('class' => $modclasses, 'id' => 'module-' . $mod->id));
         }
         return $output;
     }
@@ -514,22 +517,21 @@ class format_vv_course_renderer extends core_course_renderer {
      * @param array $displayoptions
      * @return string
      */
-    public function course_section_cm($course, &$completioninfo, cm_info $mod, $sectionreturn, $displayoptions = array()) {
+    public function course_section_cm($course, &$completioninfo, cm_info $mod, $sectionreturn,
+        $displayoptions = array()) {
         $output = '';
-        // We return empty string (because course module will not be displayed at all)
-        // if:
-        // 1) The activity is not visible to users
-        // and
-        // 2) The 'availableinfo' is empty, i.e. the activity was
-        // hidden in a way that leaves no info, such as using the
-        // eye icon.
+        // We return empty string (because course module will not be displayed at all) if:
+        // 1) The activity is not visible to users.
+        // And.
+        // 2) The 'availableinfo' is empty, i.e. the activity was hidden in a way that leaves no info,
+        // Such as using the eye icon.
         if (!$mod->uservisible && empty($mod->availableinfo)) {
             return $output;
         }
 
         $output .= html_writer::start_tag('div');
 
-        // Start a wrapper for the actual content to keep the indentation consistent
+        // Start a wrapper for the actual content to keep the indentation consistent.
         $output .= html_writer::start_tag('div');
 
         $modicons = '';
@@ -544,7 +546,7 @@ class format_vv_course_renderer extends core_course_renderer {
             $output .= html_writer::span($modicons, 'actions');
         }
 
-        // Display the link to the module (or do nothing if module has no url)
+        // Display the link to the module (or do nothing if module has no url).
         $cmname = $this->course_section_cm_name($mod, $displayoptions);
 
         if (!empty($cmname)) {
@@ -552,16 +554,17 @@ class format_vv_course_renderer extends core_course_renderer {
             $output .= html_writer::start_tag('div', array('class' => 'activityinstance'));
             $output .= $cmname;
 
-            // Module can put text after the link (e.g. forum unread)
+            // Module can put text after the link (e.g. forum unread).
             $output .= $mod->afterlink;
 
-            // Closing the tag which contains everything but edit icons. Content part of the module should not be part of this.
-            $output .= html_writer::end_tag('div'); // .activityinstance
+            // Closing the tag which contains everything but edit icons.
+            // Content part of the module should not be part of this.
+            $output .= html_writer::end_tag('div');
         }
 
         $output .= $this->course_section_cm_text($mod, $displayoptions);
 
-        // show availability info (if module is not available)
+        // Show availability info (if module is not available).
         $output .= $this->course_section_cm_availability($mod, $displayoptions);
 
         $output .= html_writer::end_tag('div');
@@ -605,12 +608,15 @@ class format_vv_course_renderer extends core_course_renderer {
             $baseurl->param('sr', $sr);
         }
 
-        // Move
+        // Move.
         if ($hasmanageactivities) {
-            if (!preg_match('/^\d+_(label|section|document|question|link|video|mauthorgym|mauthorcloudlibrary|mauthor)_\d+/', $mod->idnumber)) {
+            if (!preg_match(
+            '/^\d+_(label|section|document|question|link|video|mauthorgym|mauthorcloudlibrary|mauthor)_\d+/',
+            $mod->idnumber)) {
                 $output .= $this->output->action_link(
                     new moodle_url($baseurl, array('copy' => $mod->id)), '',  null, array(),
-                    new pix_icon('t/move', $str->move, 'moodle', array('class' => 'iconsmall', 'title' => $str->move))
+                    new pix_icon('t/move', $str->move, 'moodle',
+                        array('class' => 'iconsmall', 'title' => $str->move))
                 );
             }
         }
@@ -619,7 +625,8 @@ class format_vv_course_renderer extends core_course_renderer {
         if ($hasmanageactivities) {
             $output .= $this->output->action_link(
                 new moodle_url($baseurl, array('update' => $mod->id)), '',  null, array(),
-                new pix_icon('t/edit', $str->editsettings, 'moodle', array('class' => 'iconsmall', 'title' => $str->editsettings))
+                new pix_icon('t/edit', $str->editsettings, 'moodle',
+                    array('class' => 'iconsmall', 'title' => $str->editsettings))
             );
         }
 
@@ -628,12 +635,14 @@ class format_vv_course_renderer extends core_course_renderer {
             if ($mod->visible) {
                 $output .= $this->output->action_link(
                     new moodle_url($baseurl, array('hide' => $mod->id)), '', null, array(),
-                    new pix_icon('t/hide', $str->hide, 'moodle', array('class' => 'iconsmall', 'title' => $str->hide))
+                    new pix_icon('t/hide', $str->hide, 'moodle',
+                        array('class' => 'iconsmall', 'title' => $str->hide))
                 );
             } else {
                 $output .= $this->output->action_link(
                     new moodle_url($baseurl, array('show' => $mod->id)), '', null, array(),
-                    new pix_icon('t/show', $str->show, 'moodle', array('class' => 'iconsmall', 'title' => $str->show))
+                    new pix_icon('t/show', $str->show, 'moodle',
+                        array('class' => 'iconsmall', 'title' => $str->show))
                 );
             }
         }
@@ -642,7 +651,8 @@ class format_vv_course_renderer extends core_course_renderer {
         if ($hasmanageactivities) {
             $output .= $this->output->action_link(
                 new moodle_url($baseurl, array('delete' => $mod->id)), '', null, array(),
-                new pix_icon('t/delete', $str->delete, 'moodle', array('class' => 'iconsmall', 'title' => $str->delete))
+                new pix_icon('t/delete', $str->delete, 'moodle',
+                    array('class' => 'iconsmall', 'title' => $str->delete))
             );
         }
 
@@ -666,7 +676,7 @@ class format_vv_course_renderer extends core_course_renderer {
         global $CFG;
         $output = '';
         if (!$mod->uservisible && empty($mod->availableinfo)) {
-            // nothing to be displayed to the user
+            // Nothing to be displayed to the user.
             return $output;
         }
         if (!$mod->url) {
@@ -720,10 +730,12 @@ class format_vv_course_renderer extends core_course_renderer {
         $onclick = htmlspecialchars_decode($mod->onclick, ENT_QUOTES);
 
         $groupinglabel = '';
-        if (!empty($mod->groupingid) && has_capability('moodle/course:managegroups', context_course::instance($mod->course))) {
+        if (!empty($mod->groupingid) &&
+            has_capability('moodle/course:managegroups', context_course::instance($mod->course))) {
             $groupings = groups_get_all_groupings($mod->course);
-            $groupinglabel = html_writer::tag('span', '('.format_string($groupings[$mod->groupingid]->name).')',
-                    array('class' => 'groupinglabel '.$textclasses));
+            $groupinglabel = html_writer::tag('span',
+                '('.format_string($groupings[$mod->groupingid]->name).')',
+                array('class' => 'groupinglabel '.$textclasses));
         }
 
         // Display link itself.
@@ -756,11 +768,11 @@ class format_vv_course_renderer extends core_course_renderer {
         $activitylink = $icon . $accesstext .
                 html_writer::tag('span', $instancename . $altname, array('class' => 'instancename'));
         if ($mod->uservisible) {
-            $output .= html_writer::link($mod->url, $activitylink, array('class' => $linkclasses, 'onclick' => $onclick)) .
-                    $groupinglabel;
+            $output .= html_writer::link($mod->url, $activitylink,
+                array('class' => $linkclasses, 'onclick' => $onclick)) . $groupinglabel;
         } else {
-            // We may be displaying this just in order to show information
-            // about visibility, without the actual link ($mod->uservisible)
+            // We may be displaying this just in order to show information.
+            // About visibility, without the actual link ($mod->uservisible).
             $output .= html_writer::tag('div', $activitylink, array('class' => $textclasses)) .
                     $groupinglabel;
         }

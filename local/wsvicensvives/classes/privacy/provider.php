@@ -13,14 +13,19 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Privacy Subsystem implementation for local_wsvicensvives.
  */
+
 namespace local_wsvicensvives\privacy;
+
 defined('MOODLE_INTERNAL') || die();
+
 /**
  * Privacy Subsystem for local_wsvicensvives implementing null_provider.
  */
+
 class provider implements \core_privacy\local\metadata\null_provider {
     // This trait must be included.
     use \core_privacy\local\legacy_polyfill;

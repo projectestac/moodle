@@ -23,5 +23,5 @@ $string['page-course-view-topics-x'] = 'Any course page in units format';
 $string['hidefromothers'] = 'Hide units';
 $string['showfromothers'] = 'Show units';
 
-// Privacy
+// Privacy.
 $string['privacy:metadata'] = 'The Vicens Vives course format only shows data stored in other locations.';

@@ -16,5 +16,5 @@
 
 $string['pluginname'] = 'Web service Vicens Vives';
 
-// Privacy
+// Privacy.
 $string['privacy:metadata'] = 'The Web service Vicens Vives only shows data stored in other locations.';

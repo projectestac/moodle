@@ -11,12 +11,12 @@
 |mod            |qv                  |https://github.com/projectestac/moodle-mod_qv                   |2019010700|2020/06/16|97620971e6171c7ad89d980072ce4263b1dc349b|
 |mod            |rcontent            |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
 |mod            |completion_progress |https://github.com/deraadt/moodle-block_completion_progress     |2020033000|2020/06/16|42bbe9728708902b5edcd2203f8054b3a134edf8|
-|mod            |courses_vicensvives |https://github.com/vicensvives/moodle-block_courses_vicensvives |2018090100|2020/06/16|25f4c45efdd8404bd415af32d21c1f2d8fb632d1|
-|mod            |licenses_vicensvives|https://github.com/vicensvives/moodle-block_licenses_vicensvives|2018090100|2020/06/16|60cf50d20e17b11d4dc266d7a9187b5a915a1b71|
+|mod            |courses_vicensvives |https://github.com/vicensvives/moodle-block_courses_vicensvives |2020090800|2020/09/14|a5966e64dbf803af49ab1794f88b3e94f0bfc664|
+|mod            |licenses_vicensvives|https://github.com/vicensvives/moodle-block_licenses_vicensvives|2020090800|2020/09/14|7d5426b504f72055549d599b3595e6778d183f92|
 |block          |rgrade              |https://github.com/projectestac/Rgrade                          |2016090500|2020/06/16|c18e2da59601367ed473f500cac73d899d1c25da|
 |block          |my_books            |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
 |course format  |simple              |https://github.com/projectestac/moodle-format_simple            |2012121100|2020/06/16|e7246fecfbd50e7d13ac93b38e1801508d82a108|
-|course format  |vv                  |https://github.com/vicensvives/moodle-format_vicensvives        |2018090100|2020/06/16|5fda6709ce041bb9c46c970b1784696bc179de83|
+|course format  |vv                  |https://github.com/vicensvives/moodle-format_vicensvives        |2020090800|2020/09/14|c5a15da6a15d159740d3664f24399e5023bc8aa6|
 |filter         |wiris               |https://github.com/wiris/moodle-filter_wiris                    |2020090300|2020/09/07|07b99b3ed37fcebb6a5b0467250144b88a00ddc2|
 |atto           |cloze               |https://github.com/dthies/moodle-atto_cloze                     |2017072802|2020/06/16|eacc7d4069cefa59000053f773e0b5bb291b3cdb|
 |atto           |fontfamily          |https://github.com/projectestac/moodle-atto_fontfamily          |2020010600|2020/06/16|ad87cd2a5bee9f087d5f3026043c9d62dcaaed97|
@@ -26,7 +26,7 @@
 |local          |clickedu            |https://github.com/clickedu/ClickeduMoodlePlugin                |2019072400|2020/06/16|06805f201af99b9f65df171331619c82fdb94f56|
 |local          |oauth               |https://github.com/projectestac/moodle-local_oauth              |2016021600|2020/06/16|b1c71e53e99e1708bb1dc728c7c31699e14ab01b|
 |local          |rcommon             |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
-|local          |wsvicensvives       |https://github.com/vicensvives/moodle-local_ws_vicensvives      |2018090100|2020/06/16|3944086b0269e4583a782f74a1cc7cef1d99a539|
+|local          |wsvicensvives       |https://github.com/vicensvives/moodle-local_ws_vicensvives      |2020090800|2020/09/14|d709bbda0baf127ce56faf7269d2b2517d6a92fe|
 |question format|hotpot              |https://github.com/gbateson/moodle-qformat_hotpot               |2019111022|2020/06/16|1f257786c2929cc5373021bdbb3ad5f6f975adae|
 |question type  |essaywiris          |https://github.com/wiris/moodle-qtype_essaywiris                |2020061600|2020/06/16|891b417cadd6bbfda194f54c0be75727a935f6a1|
 |question type  |matchwiris          |https://github.com/wiris/moodle-qtype_matchwiris                |2020061600|2020/06/16|baa5c57a79f2217c5917d0d91a2cf57b3c211e5a|

@@ -27,6 +27,6 @@ $string['total'] = 'totals';
 $string['licenses'] = 'Llicències';
 $string['nohaylicencias'] = 'No hi ha cap llicència per mostrar';
 
-// Permisos
+// Permisos.
 $string['licenses_vicensvives:addinstance'] = 'Crear instància del bloc.';
 $string['licenses_vicensvives:myaddinstance'] = 'Crear instància del bloc en my.';
