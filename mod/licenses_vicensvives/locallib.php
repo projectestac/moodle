@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die();
+
 require_once("$CFG->dirroot/blocks/courses_vicensvives/lib/vicensvives.php");
 
 function vicensvives_count_licenses($idcoursebook=null) {

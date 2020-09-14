@@ -77,7 +77,7 @@ class block_licenses_vicensvives extends block_base {
         return 'navigation';
     }
 
-    function applicable_formats() {
+    public function applicable_formats() {
         return array('all' => true);
     }
 

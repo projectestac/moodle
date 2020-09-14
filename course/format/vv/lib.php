@@ -14,7 +14,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-require_once("{$CFG->dirroot}/course/format/topics/lib.php");
+defined('MOODLE_INTERNAL') || die();
+
+require_once($CFG->dirroot . "/course/format/topics/lib.php");
 
 class format_vv extends format_topics {
 
@@ -103,7 +105,7 @@ class format_vv extends format_topics {
             $numsections = $numsections[0];
             if ($numsections > $maxsections) {
                 $element = $mform->getElement('numsections');
-                for ($i = $maxsections+1; $i <= $numsections; $i++) {
+                for ($i = $maxsections + 1; $i <= $numsections; $i++) {
                     $element->addOption("$i", $i);
                 }
             }
@@ -134,8 +136,8 @@ class format_vv extends format_topics {
      */
     public function get_format_options($section = null) {
         $options = parent::get_format_options($section);
-        $options['coursedisplay'] = COURSE_DISPLAY_SINGLEPAGE; // This format is only single-page
-        $options['hiddensections'] = 1; // Hidden sections are always invisible
+        $options['coursedisplay'] = COURSE_DISPLAY_SINGLEPAGE; // This format is only single-page.
+        $options['hiddensections'] = 1; // Hidden sections are always invisible.
         return $options;
     }
 }

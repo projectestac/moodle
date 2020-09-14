@@ -21,7 +21,7 @@ require_once($CFG->dirroot.'/lib/formslib.php');
 require_once($CFG->dirroot.'/lib/tablelib.php');
 
 function str_contains($haystack, $needle) {
-    // Normaliza el texto a carñacteres ASCII en mínuscula y sin espacios duplicados
+    // Normaliza el texto a carñacteres ASCII en mínuscula y sin espacios duplicados.
     $normalize = function($text) {
         $text = core_text::specialtoascii($text);
         $text = core_text::strtolower($text);
@@ -66,7 +66,7 @@ foreach ($ws->subjects($lang) as $subject) {
     $subjects[$subject->idSubject] = $subject->name;
 }
 
-// Obtener únicamente las licencias del libro del curso
+// Obtener únicamente las licencias del libro del curso.
 $course = $DB->get_record('course', array('id' => $courseid));
 $idbook = null;
 if (preg_match('/^vv-([0-9]+)-/', $course->idnumber, $match)) {
@@ -149,10 +149,10 @@ $table->define_headers(array(
 $table->pagesize(50, count($filteredbooks));
 $table->setup();
 
-// Ordenación
+// Ordenación.
 core_collator::asort_objects_by_property($filteredbooks, 'fullname');
 
-// Paginación
+// Paginación.
 $books = array_slice($filteredbooks, $table->get_page_start(), $table->get_page_size());
 
 foreach ($books as $book) {

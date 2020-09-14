@@ -4,6 +4,7 @@
 - Updated `filter/wiris` to 7.24.0
 - Updated `atto/wiris` to 7.24.0
 - Updated `mod/geogebra` to 3.6.1
+- Updated `mod/courses_vicensvives`, `mod/licenses_vicensvives`, `course/format/vv` and `local/wsvicensvives` to 3.9.1
 
 ### v3.9.1 (2020-07-16)
 #### Updates
