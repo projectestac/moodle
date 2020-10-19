@@ -1,8 +1,8 @@
-$maincolor: #ac2013 !default; //color2
+$maincolor: #ff494e !default; //color2
 $colorcontrast: white !default;
-$fontcolor: #303030 !default; //color4
-$linkscolor: #ac2013 !default; //color5
-$headerbg: #f4f4f4 !default;
+$fontcolor: #007377 !default; //color4
+$linkscolor: #910048 !default; //color5
+$headerbg: #f8f8f8 !default;
 $fontsize: 1rem !default;
 $fontfamily: null !default;
 $texttransform: null !default;
@@ -44,6 +44,11 @@ a,
     height: 50px;
 }
 
+/* Copy styling of all contexts to pages of CONTEXT_USER, which are formatted differently by context_header() */
+div.page-context-header div.page-header-image {
+    margin-bottom: 0px;
+}
+
 h2,
 h3,
 h4 {
@@ -65,6 +70,27 @@ h4 {
     .row {
         min-height: 93px;
     }
+
+    &.odissea {
+        background-image: url('[[pix:theme|top_odissea]]');
+    }
+    
+    &.alexandria {
+        background-image: url('[[pix:theme|top_alexandria]]');
+    }
+    
+    &.eix {
+        background-image: url('[[pix:theme|top_eix]]');
+    }
+
+    &.eoi {
+        background-image: url('[[pix:theme|top_eoi]]');
+    }    
+}
+
+/* Remove duplicated link to messages */
+#page-header a#message-user-button.btn {
+    display: none;
 }
 
 /* Navigation */
@@ -384,6 +410,7 @@ nav.fixed-top.navbar {
 
     .moodle_footer img {
         width: 95px;
+        margin-top: -8px;
     }
 }
 
