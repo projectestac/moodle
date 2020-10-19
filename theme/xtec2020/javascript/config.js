@@ -12,7 +12,12 @@ function init_nodes_colors(color, logocolor) {
 function changeColors() {
     colorProfile = colorset.value;
 
-    if(colorProfile == 'grana') {
+    if(colorProfile == 'PEDC') {
+        maincolor.value = '#FF494E';
+        fontcolor.value = '#007377';
+        linkscolor.value = '#910048';
+    }
+    else if(colorProfile == 'grana') {
         maincolor.value = '#AC2013';
         fontcolor.value = '#303030';
         linkscolor.value = '#AC2013';
