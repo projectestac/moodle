@@ -1,3 +1,7 @@
+### 3.9.2+ (Build: 20201016)
+#### Updates
+- Updated `theme/xtec2020` to 0.1.2
+
 ### 3.9.1+ (Build: 20200903)
 #### Updates
 - Updated `mod/subcourse` to 9.0.0
@@ -5,7 +9,6 @@
 - Updated `atto/wiris` to 7.24.0
 - Updated `mod/geogebra` to 3.6.1
 - Updated `mod/courses_vicensvives`, `mod/licenses_vicensvives`, `course/format/vv` and `local/wsvicensvives` to 3.9.1
-- Updated `theme/xtec2020` to 0.1.2
 
 ### v3.9.1 (2020-07-16)
 #### Updates
