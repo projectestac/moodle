@@ -3,4 +3,7 @@
 - Added `question/behavior/adaptivemultipart`
 - Added `question/type/formulas`
 
+#### Updates
+- Updated `mod/subcourse` to 9.0.1
+
 
