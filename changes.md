@@ -5,6 +5,7 @@
 
 #### Updates
 - Updated `mod/subcourse` to 9.0.1
+- Updated `mod/journal` to 2.1.0 (Build: 2020091100)
 
 ### 3.9.2+ (Build: 20201016)
 #### Updates
