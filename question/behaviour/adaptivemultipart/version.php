@@ -15,17 +15,22 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin meta-data
+ * Version information for the adaptive behaviour for multi-part questions.
  *
- * @package     mod_subcourse
- * @copyright   2008 David Mudrak <david@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    qbehaviour_adaptivemultipart
+ * @copyright  2012 The Open University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'mod_subcourse';
-$plugin->release = '9.0.1';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2020090602;
-$plugin->requires = 2017051500;
+$plugin->version   = 2018080600;
+$plugin->requires  = 2014051200;
+$plugin->cron      = 0;
+$plugin->component = 'qbehaviour_adaptivemultipart';
+$plugin->maturity  = MATURITY_STABLE;
+$plugin->release   = '4.2.1 for Moodle 3.0+';
+
+$plugin->dependencies = array(
+    'qbehaviour_adaptive' => 2014051200,
+);

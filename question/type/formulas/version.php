@@ -15,17 +15,25 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin meta-data
+ * Version information for the formulas question type.
  *
- * @package     mod_subcourse
- * @copyright   2008 David Mudrak <david@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    qtype_formulas
+ * @copyright  2010 Hon Wai, Lau <lau65536@gmail.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'mod_subcourse';
-$plugin->release = '9.0.1';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2020090602;
-$plugin->requires = 2017051500;
+$plugin->component = 'qtype_formulas';
+$plugin->version   = 2020061900;
+
+$plugin->cron      = 0;
+$plugin->requires  = 2015111600;
+$plugin->dependencies = array(
+    'qbehaviour_adaptive' => 2015111600,
+    'qbehaviour_adaptivemultipart'     => 2014092500,
+    'qtype_multichoice' => 2015111600,
+);
+$plugin->release   = '4.91 for Moodle 3.0 to 3.9';
+
+$plugin->maturity  = MATURITY_STABLE;

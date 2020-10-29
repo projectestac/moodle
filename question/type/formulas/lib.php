@@ -14,18 +14,20 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Plugin meta-data
- *
- * @package     mod_subcourse
- * @copyright   2008 David Mudrak <david@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'mod_subcourse';
-$plugin->release = '9.0.1';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2020090602;
-$plugin->requires = 2017051500;
+/**
+ * Used to save and restore image correctly
+ *
+ * @copyright &copy; 2010-2011 Hon Wai, Lau
+ * @author Hon Wai, Lau <lau65536@gmail.com>
+ * @license http://www.gnu.org/copyleft/gpl.html GNU Public License version 3
+ * @package questionbank
+ * @subpackage questiontypes
+ */
+
+function qtype_formulas_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options=array()) {
+    global $CFG;
+    require_once($CFG->libdir . '/questionlib.php');
+    question_pluginfile($course, $context, 'qtype_formulas', $filearea, $args, $forcedownload, $options);
+}

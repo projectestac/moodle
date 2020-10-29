@@ -15,17 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin meta-data
+ * Question behaviour type for the adaptive multi-part behaviour.
  *
- * @package     mod_subcourse
- * @copyright   2008 David Mudrak <david@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    qbehaviour_adaptivemultipart
+ * @copyright  2013 The Open University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'mod_subcourse';
-$plugin->release = '9.0.1';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2020090602;
-$plugin->requires = 2017051500;
+require_once(dirname(__FILE__) . '/../deferredcbm/behaviourtype.php');
+
+
+/**
+ * Question behaviour type for the adaptive multi-part behaviour.
+ *
+ * @copyright  2013 The Open University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class qbehaviour_adaptivemultipart_type extends qbehaviour_adaptive_type {
+    public function is_archetypal() {
+        return false;
+    }
+}

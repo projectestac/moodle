@@ -15,17 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin meta-data
+ * Strings for component 'qbehaviour_adaptive', language 'en'.
  *
- * @package     mod_subcourse
- * @copyright   2008 David Mudrak <david@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    qbehaviour_adaptivemultipart
+ * @copyright  2012 The Open University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->component = 'mod_subcourse';
-$plugin->release = '9.0.1';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2020090602;
-$plugin->requires = 2017051500;
+$string['pluginname'] = 'Adaptive mode (multi-part questions)';
+$string['privacy:metadata'] = 'The Adaptive mode (multi-part questions) plugin does not store any personal data.';
