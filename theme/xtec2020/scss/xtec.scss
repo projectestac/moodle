@@ -658,3 +658,59 @@ th, td {
         padding-left: 0;
     }
 }
+
+/* 1051-2020-0043 */
+ body#page-admin-report-coursequotas-filemanager div#page.container-fluid section#region-main div#results table.generaltable{
+     font-size: 0.8em;
+ }
+
+div#page.container-fluid div#page-content div#filter_sizer div#filter_caption i{
+    margin-right:5px;
+}
+div#page.container-fluid div#page-content div#filter_sizer div#filter_inner input,
+div#page.container-fluid div#page-content div#filter_sizer div#filter_inner select{
+    margin-bottom:5px;
+}
+
+div#page.container-fluid section#region-main ul.nav-tabs li {
+    margin-right: 10px;
+}
+
+div#page.container-fluid section#region-main ul.nav-tabs li.active a {
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #dee2e6;
+    border-bottom:0px;
+    padding: 5px 10px;
+}
+
+.path-local-alexandriaimporter div#page.container-fluid section#region-main div#alexandria_restore
+.row-fluid{
+    padding: 1.0em;
+}
+
+body#page-local-alexandriaimporter-search div#page.container-fluid  div#page-content section#region-main div#alexandria_restore div.tab-content div.row-fluid div.text-right{
+    width: 100%;
+}
+
+body#page-local-alexandriaimporter-search div#page.container-fluid  div#page-content section#region-main div#alexandria_restore div.tab-content .form-search div.simple{
+    margin-left:30%;
+}
+
+body#page-local-alexandriaimporter-search div#page.container-fluid  div#page-content section#region-main div#alexandria_restore div.tab-content .form-search .controls {
+    display:inline;
+}
+
+body#page-local-alexandriaimporter-search div#page.container-fluid  div#page-content section#region-main div#alexandria_restore div.tab-content #accordion .accordion-group .container-fluid {
+    clear:both;
+    border-top: 1px solid #dee2e6;
+    padding-top: 5px;
+}
+
+body#page-local-alexandriaimporter-search div#page.container-fluid  div#page-content section#region-main div#alexandria_restore div.tab-content #accordion .accordion-group .container-fluid div{
+    float:left;
+}
+
+body#page-local-alexandriaimporter-search div#page.container-fluid  div#page-content section#region-main div#alexandria_restore div.tab-content #accordion .accordion-group .container-fluid div.text-right{
+    float:right;
+    padding-bottom:5px;
+}
