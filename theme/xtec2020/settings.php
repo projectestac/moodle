@@ -32,7 +32,7 @@ if ($ADMIN->fulltree) {
 
     global $PAGE;
     $PAGE->requires->js('/theme/xtec2020/javascript/config.js');
-    $PAGE->requires->js_init_code('xtec2020_theme_onload();');
+    $PAGE->requires->js_init_code('xtec2020_theme_onload({HEADERBG: "'.DEFAULT_HEADERBG.'", MAINCOLOR: "'.DEFAULT_MAINCOLOR.'", FONTCOLOR: "'.DEFAULT_FONTCOLOR.'", LINKSCOLOR: "'.DEFAULT_LINKSCOLOR.'"});');
 
     // Header settings
     $setting = new admin_setting_heading('theme_xtec2020/header_settings', get_string('header_settings', 'theme_xtec2020'), "");

@@ -43,7 +43,7 @@ function xmldb_theme_xtec2020_upgrade($oldversion) {
     // Documentation for the XMLDB Editor can be found at:
     // https://docs.moodle.org/dev/XMLDB_editor
 
-    if ($oldversion < 2020110300) {
+    if ($oldversion < 2020110302) {
 
     	include_once($CFG->dirroot.'/theme/xtec2020/constants.php');
         
@@ -54,11 +54,12 @@ function xmldb_theme_xtec2020_upgrade($oldversion) {
         	set_config('colorset', 'PEDC', 'theme_xtec2020');
         	set_config('maincolor', DEFAULT_MAINCOLOR, 'theme_xtec2020');
         	set_config('fontcolor', DEFAULT_FONTCOLOR, 'theme_xtec2020');
-        	set_config('linkscolor', DEFAULT_LINKSCOLOR, 'theme_xtec2020');
+            set_config('linkscolor', DEFAULT_LINKSCOLOR, 'theme_xtec2020');
+            set_config('headerbg', DEFAULT_HEADERBG, 'theme_xtec2020');            
         }
 
         // xtec2020 savepoint reached
-        upgrade_plugin_savepoint(true, 2020110300, 'theme', 'xtec2020');
+        upgrade_plugin_savepoint(true, 2020110302, 'theme', 'xtec2020');
     }
 
     return true;
