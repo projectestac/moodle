@@ -15,17 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin version and other meta-data are defined here.
+ * XTEC2020 Theme Constants.
  *
  * @package     theme_xtec2020
- * @copyright   2020 Pau Ferrer Ocaña <pau@moodle.com>
+ * @copyright   2020 TICxCAT
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->component = 'theme_xtec2020';
-$plugin->release = '0.1.2';
-$plugin->version = 2020110400;
-$plugin->requires = 2019052000;
-$plugin->maturity = MATURITY_BETA;
+define('DEFAULT_HEADERBG', '#F8F8F8');
+define('DEFAULT_MAINCOLOR', '#FF494E');
+define('DEFAULT_FONTCOLOR', '#007377');
+define('DEFAULT_LINKSCOLOR', '#910048');

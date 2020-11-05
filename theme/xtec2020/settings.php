@@ -28,10 +28,11 @@ defined('MOODLE_INTERNAL') || die();
 if ($ADMIN->fulltree) {
 
     require_once($CFG->dirroot.'/theme/xtec2020/lib.php');
+    include_once($CFG->dirroot.'/theme/xtec2020/constants.php');
 
     global $PAGE;
     $PAGE->requires->js('/theme/xtec2020/javascript/config.js');
-    $PAGE->requires->js_init_code('xtec2020_theme_onload();');
+    $PAGE->requires->js_init_code('xtec2020_theme_onload({HEADERBG: "'.DEFAULT_HEADERBG.'", MAINCOLOR: "'.DEFAULT_MAINCOLOR.'", FONTCOLOR: "'.DEFAULT_FONTCOLOR.'", LINKSCOLOR: "'.DEFAULT_LINKSCOLOR.'"});');
 
     // Header settings
     $setting = new admin_setting_heading('theme_xtec2020/header_settings', get_string('header_settings', 'theme_xtec2020'), "");
@@ -46,7 +47,7 @@ if ($ADMIN->fulltree) {
 
     $name = 'theme_xtec2020/headerbg';
     $title = get_string('headerbg', 'theme_xtec2020');
-    $default = '#F8F8F8';
+    $default = DEFAULT_HEADERBG;
     $setting = new admin_setting_configcolourpicker($name, $title, "", $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
@@ -176,14 +177,14 @@ if ($ADMIN->fulltree) {
 
     $name = 'theme_xtec2020/maincolor';
     $title = get_string('maincolor', 'theme_xtec2020');
-    $default = '#FF494E';
+    $default = DEFAULT_MAINCOLOR;
     $setting = new admin_setting_configcolourpicker($name, $title, '', $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     $name = 'theme_xtec2020/fontcolor';
     $title = get_string('fontcolor', 'theme_xtec2020');
-    $default = '#007377';
+    $default = DEFAULT_FONTCOLOR;
     $colorwarning = get_string('color_warning', 'theme_xtec2020', theme_xtec2020_get_YIQ(get_config('theme_xtec2020', 'fontcolor')));
     $setting = new admin_setting_configcolourpicker($name, $title, $colorwarning, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -191,7 +192,7 @@ if ($ADMIN->fulltree) {
 
     $name = 'theme_xtec2020/linkscolor';
     $title = get_string('linkscolor', 'theme_xtec2020');
-    $default = '#910048';
+    $default = DEFAULT_LINKSCOLOR;
     $colorwarning = get_string('color_warning', 'theme_xtec2020', theme_xtec2020_get_YIQ(get_config('theme_xtec2020', 'linkscolor')));
     $setting = new admin_setting_configcolourpicker($name, $title, $colorwarning, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');

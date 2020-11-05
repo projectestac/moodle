@@ -5,7 +5,7 @@
 |mod              |choicegroup         |https://github.com/ndunand/moodle-mod_choicegroup               |2020070100|2020/07/01|04c8f0d417ccc2d7b147268120938895fb168ad3|
 |mod              |geogebra            |https://github.com/projectestac/moodle-mod_geogebra             |2020090800|2020/09/10|8a345b1859e1c755d35a7bc2f317ca84f865010f|
 |mod              |hotpot              |https://github.com/gbateson/moodle-mod_hotpot                   |2020060544|2020/06/16|748dc52d7cc96c7a0a38d0869a1dc20401b8b14e|
-|mod              |jclic               |https://github.com/projectestac/moodle-mod_jclic                |2018112000|2020/06/16|7c93722eaa868c1b50fd4cbf8215bf78caa3a10e|
+|mod              |jclic               |https://github.com/projectestac/moodle-mod_jclic                |2020110400|2020/11/04|18debc5bf7839f517f82920fd4b1f43c23547252|
 |mod              |journal             |https://github.com/elearningsoftware/moodle-mod_journal         |2020091100|2020/10/29|837d07959d390178246eb2bcf58c5b4afb27e670|
 |mod              |questionnaire       |https://github.com/PoetOS/moodle-mod_questionnaire              |2020062301|2020/06/30|b8137c0227407149d3f8f01c345548d13474feee|
 |mod              |qv                  |https://github.com/projectestac/moodle-mod_qv                   |2019010700|2020/06/16|97620971e6171c7ad89d980072ce4263b1dc349b|
@@ -36,7 +36,7 @@
 |question type    |wq                  |https://github.com/wiris/moodle-qtype_wq                        |2020061600|2020/06/16|67c0094a7bb995cfd8c15c8dda791cdd37dbd691|
 |question type    |ordering            |https://github.com/gbateson/moodle-qtype_ordering               |2019121400|2020/06/16|e72bcf9c7effbe0718c0687069ee4990cfec1892|
 |report           |coursequotas        |https://github.com/projectestac/moodle-report_coursequotas      |2016091400|2020/06/16|d1e029092f5d5cddd603ab4972209759817ea3ef|
-|theme            |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020101905|2020/10/19|3dff402d0fc85ed4f2257e63097b1ff84eb995ce|
+|theme            |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020110400|2020/11/04|572142cbae2e441124be00385b2dc0260e162c60|
 
 ## Plugins added for testing purposes
 
