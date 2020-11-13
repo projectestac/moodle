@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_xtec2020';
 $plugin->release = '0.1.2';
-$plugin->version = 2020110400;
+$plugin->version = 2020111300;
 $plugin->requires = 2019052000;
 $plugin->maturity = MATURITY_BETA;
