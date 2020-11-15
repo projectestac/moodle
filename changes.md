@@ -1,3 +1,15 @@
+### 3.9.3+ (Build: 20201113)
+#### Updates
+- Upadted `theme/xtec2020` to 0.1.2 (Build 2020111300)
+- Updated `question/type/essaywiris` to 3.78.3
+- Updated `question/type/matchwiris` to 3.78.3
+- Updated `question/type/multianswerwiris` to 3.78.3
+- Updated `question/type/multichoicewiris` to 3.78.3
+- Updated `question/type/shortanswerwiris` to 3.78.3
+- Updated `question/type/truefalsewiris` to 3.78.3
+- Updated `question/type/wq` to 3.78.3
+- Updated `course/format/grid` to 3.9.1.0
+
 ### 3.9.2+ (Build: 20201028)
 #### New plugins
 - Added `question/behavior/adaptivemultipart`
@@ -7,7 +19,6 @@
 - Updated `mod/subcourse` to 9.0.1
 - Updated `mod/journal` to 2.1.0 (Build: 2020091100)
 - Updated `mod/jclic` to 3.0.5
-- Upadted `theme/xtec2020` to 0.1.2 (Build 2020110400)
 
 ### 3.9.2+ (Build: 20201016)
 #### Updates
