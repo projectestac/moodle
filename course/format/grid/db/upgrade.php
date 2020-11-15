@@ -114,11 +114,6 @@ function xmldb_format_grid_upgrade($oldversion = 0) {
         upgrade_plugin_savepoint(true, '2013110400', 'format', 'grid');
     }
 
-    // Automatic 'Purge all caches'....
-    if ($oldversion < 2114052000) {
-        purge_all_caches();
-    }
-
     if ($oldversion < 2019111702) {
         $table = new xmldb_table('format_grid_icon');
 
@@ -130,6 +125,20 @@ function xmldb_format_grid_upgrade($oldversion = 0) {
 
         upgrade_plugin_savepoint(true, '2019111702', 'format', 'grid');
     }
+
+    if ($oldversion < 2019111703) {
+        $table = new xmldb_table('format_grid_icon');
+        $index = new xmldb_index('course', XMLDB_INDEX_NOTUNIQUE, array('courseid'));
+
+        if (!$dbman->index_exists($table, $index)) {
+            $dbman->add_index($table, $index);
+        }
+
+        upgrade_plugin_savepoint(true, '2019111703', 'format', 'grid');
+    }
+
+    // Automatic 'Purge all caches'....
+    purge_all_caches();
 
     return true;
 }

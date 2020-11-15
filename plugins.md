@@ -28,12 +28,13 @@
 |local            |rcommon             |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
 |local            |wsvicensvives       |https://github.com/vicensvives/moodle-local_ws_vicensvives      |2020090800|2020/09/14|d709bbda0baf127ce56faf7269d2b2517d6a92fe|
 |question format  |hotpot              |https://github.com/gbateson/moodle-qformat_hotpot               |2019111022|2020/06/16|1f257786c2929cc5373021bdbb3ad5f6f975adae|
-|question type    |essaywiris          |https://github.com/wiris/moodle-qtype_essaywiris                |2020061600|2020/06/16|891b417cadd6bbfda194f54c0be75727a935f6a1|
-|question type    |matchwiris          |https://github.com/wiris/moodle-qtype_matchwiris                |2020061600|2020/06/16|baa5c57a79f2217c5917d0d91a2cf57b3c211e5a|
-|question type    |multianswerwiris    |https://github.com/wiris/moodle-qtype_multianswerwiris          |2020061600|2020/06/16|78d65358269160a055fb2441078c34ece586bf0a|
-|question type    |shortanswerwiris    |https://github.com/wiris/moodle-qtype_shortanswerwiris          |2020061600|2020/06/16|069ace6b725d9b329b230adb89e1843dc14a2116|
-|question type    |truefalsewiris      |https://github.com/wiris/moodle-qtype_truefalsewiris            |2020061600|2020/06/16|5660144158faf5c8ade26f209db1dba95fbd318d|
-|question type    |wq                  |https://github.com/wiris/moodle-qtype_wq                        |2020061600|2020/06/16|67c0094a7bb995cfd8c15c8dda791cdd37dbd691|
+|question type    |essaywiris          |https://github.com/wiris/moodle-qtype_essaywiris                |2020111000|2020/11/14|e436d99821f3d858234846b256d088b942a03eff|
+|question type    |matchwiris          |https://github.com/wiris/moodle-qtype_matchwiris                |2020111000|2020/11/14|01ee8d85b3df97d6a5316971d27f5b5f1177d045|
+|question type    |multianswerwiris    |https://github.com/wiris/moodle-qtype_multianswerwiris          |2020111000|2020/11/14|3aeb260d16219b723c418c7647079cf78554e22a|
+|question type    |multichoicewiris    |https://github.com/wiris/moodle-qtype_multichoicewiris          |2020111000|2020/11/14|5e8d1c577354e776e0f3bc3f3b31063248dcfc55|
+|question type    |shortanswerwiris    |https://github.com/wiris/moodle-qtype_shortanswerwiris          |2020111000|2020/11/14|b1f46ea616278360c2325563409134650ae5e01d|
+|question type    |truefalsewiris      |https://github.com/wiris/moodle-qtype_truefalsewiris            |2020111000|2020/11/14|4fd81d2f4c5d5940405679aa4c1a66fd620da6cf|
+|question type    |wq                  |https://github.com/wiris/moodle-qtype_wq                        |2020111000|2020/11/14|ee5b639a6795d8a7f71848dde93272151e07b3ad|
 |question type    |ordering            |https://github.com/gbateson/moodle-qtype_ordering               |2019121400|2020/06/16|e72bcf9c7effbe0718c0687069ee4990cfec1892|
 |report           |coursequotas        |https://github.com/projectestac/moodle-report_coursequotas      |2016091400|2020/06/16|d1e029092f5d5cddd603ab4972209759817ea3ef|
 |theme            |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020111300|2020/11/13|047811ae983a7adefffb52dfd9daba04186a4a5c|
@@ -42,7 +43,7 @@
 
 |Type             |Name                |Source                                                          |Version   |Date      | Commit                                 |
 |-----------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
-|course format    |grid                |https://github.com/gjb2048/moodle-format_grid                   |2019111702|2020/06/18|f59ed8e561056fb78dde6179837d2b12f80e53d3|
+|course format    |grid                |https://github.com/gjb2048/moodle-format_grid                   |2019111703|2020/11/15|5db7e69ad9588ec4811b84d5479772139b660e61|
 |mod              |subcourse           |https://github.com/mudrd8mz/moodle-mod_subcourse                |2020090602|2020/10/29|4ad33dabe1367b46185fa92ed673c736a3cc2f9c|
 |question behavior|adaptivemultipart   |https://github.com/maths/moodle-qbehaviour_adaptivemultipart    |2018080600|2020/10/29|55d1de30797a5c348e780389db8f90f273da65e5|
 |question type    |formulas            |https://github.com/dbauer-ets/moodle-qtype_formulas             |2020061900|2020/10/29|515b377c4cbe4c7de355647ea84250afcaa684a0|

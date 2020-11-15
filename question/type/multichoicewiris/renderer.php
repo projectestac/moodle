@@ -15,12 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 defined('MOODLE_INTERNAL') || die();
+require_once($CFG->dirroot . '/question/type/multichoice/renderer.php');
+require_once($CFG->dirroot . '/question/type/wq/renderer.php');
 
-$plugin->version = 2020111000;
-$plugin->requires = 2011120500; // Moodle 2.2.
-$plugin->release = '3.78.3';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->component = 'qtype_wq';
-$plugin->dependencies = array (
-     'filter_wiris' => ANY_VERSION
-);
+
+class qtype_multichoicewiris_single_renderer extends qtype_wq_renderer {
+    public function __construct(moodle_page $page, $target) {
+        parent::__construct(new qtype_multichoice_single_renderer($page, $target), $page, $target);
+    }
+}
+
+
+class qtype_multichoicewiris_multi_renderer extends qtype_wq_renderer {
+    public function __construct(moodle_page $page, $target) {
+        parent::__construct(new qtype_multichoice_multi_renderer($page, $target), $page, $target);
+    }
+}
