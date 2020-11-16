@@ -1,3 +1,8 @@
+### 3.10+ (Build: 20201113)
+#### Updates
+- Updated Moodle version to 3.10
+- Updated `course/format/grid` to 3.10.0.1
+
 ### 3.9.3+ (Build: 20201113)
 #### Updates
 - Upadted `theme/xtec2020` to 0.1.2 (Build 2020111300)
