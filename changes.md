@@ -1,4 +1,6 @@
 ### 3.8.6+ (Build: 20210108)
+#### Updates
+- Upadted `theme/xtec2020` to 0.1.2 (Build 2021011200)
 
 ### 3.8.6 (Build: 20201109)
 #### Updates

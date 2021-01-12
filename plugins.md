@@ -37,7 +37,7 @@
 |question type    |wq                  |https://github.com/wiris/moodle-qtype_wq                        |2020111000|2020/11/14|ee5b639a6795d8a7f71848dde93272151e07b3ad|
 |question type    |ordering            |https://github.com/gbateson/moodle-qtype_ordering               |2019121400|2020/06/16|e72bcf9c7effbe0718c0687069ee4990cfec1892|
 |report           |coursequotas        |https://github.com/projectestac/moodle-report_coursequotas      |2016091400|2020/06/16|d1e029092f5d5cddd603ab4972209759817ea3ef|
-|theme            |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2020111300|2020/11/13|047811ae983a7adefffb52dfd9daba04186a4a5c|
+|theme            |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2021011200|2021/01/12|beb87b0e58ca1faf4db9b38b38a6c9854ad391fc|
 
 ## Plugins added for testing purposes
 
