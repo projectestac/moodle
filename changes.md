@@ -1,3 +1,7 @@
+### 3.10+ (Build: 20210108)
+#### Updates
+- Upadted `theme/xtec2020` to 0.1.2 (Build 2021011200)
+
 ### 3.10+ (Build: 20201113)
 #### Updates
 - Updated Moodle version to 3.10

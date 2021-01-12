@@ -279,7 +279,7 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
-    if (!function_exists('is_xtecadmin') || is_xtecadmin()) {
+    if (get_protected_agora()) {
         $setting = new admin_setting_heading('theme_xtec2020/advices_user', get_string('advices_user', 'theme_xtec2020'), "");
         $settings->add($setting);
 
