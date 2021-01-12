@@ -9,7 +9,7 @@
 |mod              |journal             |https://github.com/elearningsoftware/moodle-mod_journal         |2020091100|2020/10/29|837d07959d390178246eb2bcf58c5b4afb27e670|
 |mod              |questionnaire       |https://github.com/PoetOS/moodle-mod_questionnaire              |2020062301|2020/06/30|b8137c0227407149d3f8f01c345548d13474feee|
 |mod              |qv                  |https://github.com/projectestac/moodle-mod_qv                   |2019010700|2020/06/16|97620971e6171c7ad89d980072ce4263b1dc349b|
-|mod              |rcontent            |https://github.com/projectestac/marsupial                       |2015111700|2020/06/16|21e7ae04c46819310c37e6307b07fc18354894a7|
+|mod              |rcontent            |https://github.com/projectestac/marsupial                       |2021011200|2021/01/12|fa142b21a2ac6b8a6636d15548260912adc4535c|
 |mod              |completion_progress |https://github.com/deraadt/moodle-block_completion_progress     |2020033000|2020/06/16|42bbe9728708902b5edcd2203f8054b3a134edf8|
 |mod              |courses_vicensvives |https://github.com/vicensvives/moodle-block_courses_vicensvives |2020090800|2020/09/14|a5966e64dbf803af49ab1794f88b3e94f0bfc664|
 |mod              |licenses_vicensvives|https://github.com/vicensvives/moodle-block_licenses_vicensvives|2020090800|2020/09/14|7d5426b504f72055549d599b3595e6778d183f92|
