@@ -2,12 +2,12 @@
 
 |Type             |Name                |Source                                                          |Version   |Date      | Commit                                 |
 |-----------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
-|mod              |choicegroup         |https://github.com/ndunand/moodle-mod_choicegroup               |2020070100|2020/07/01|04c8f0d417ccc2d7b147268120938895fb168ad3|
+|mod              |choicegroup         |https://github.com/ndunand/moodle-mod_choicegroup               |2020121900|2020/12/19|240f8e8eb190c9d4ba75aa56ccb75ee2d3ed0c7d|
 |mod              |geogebra            |https://github.com/projectestac/moodle-mod_geogebra             |2020090800|2020/09/10|8a345b1859e1c755d35a7bc2f317ca84f865010f|
 |mod              |hotpot              |https://github.com/gbateson/moodle-mod_hotpot                   |2020060544|2020/06/16|748dc52d7cc96c7a0a38d0869a1dc20401b8b14e|
 |mod              |jclic               |https://github.com/projectestac/moodle-mod_jclic                |2020110400|2020/11/04|18debc5bf7839f517f82920fd4b1f43c23547252|
 |mod              |journal             |https://github.com/elearningsoftware/moodle-mod_journal         |2020091100|2020/10/29|837d07959d390178246eb2bcf58c5b4afb27e670|
-|mod              |questionnaire       |https://github.com/PoetOS/moodle-mod_questionnaire              |2020062301|2020/06/30|b8137c0227407149d3f8f01c345548d13474feee|
+|mod              |questionnaire       |https://github.com/PoetOS/moodle-mod_questionnaire              |2021062300|2020/11/18|1db7bcce061a0ba1fbd5632b667366ccfd27d30b|
 |mod              |qv                  |https://github.com/projectestac/moodle-mod_qv                   |2019010700|2020/06/16|97620971e6171c7ad89d980072ce4263b1dc349b|
 |mod              |rcontent            |https://github.com/projectestac/marsupial                       |2021011200|2021/01/12|fa142b21a2ac6b8a6636d15548260912adc4535c|
 |mod              |completion_progress |https://github.com/deraadt/moodle-block_completion_progress     |2020033000|2020/06/16|42bbe9728708902b5edcd2203f8054b3a134edf8|
@@ -45,5 +45,5 @@
 |-----------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
 |course format    |grid                |https://github.com/gjb2048/moodle-format_grid                   |2019111703|2020/11/15|5db7e69ad9588ec4811b84d5479772139b660e61|
 |mod              |subcourse           |https://github.com/mudrd8mz/moodle-mod_subcourse                |2020090602|2020/10/29|4ad33dabe1367b46185fa92ed673c736a3cc2f9c|
-|question behavior|adaptivemultipart   |https://github.com/maths/moodle-qbehaviour_adaptivemultipart    |2018080600|2020/10/29|55d1de30797a5c348e780389db8f90f273da65e5|
+|question behavior|adaptivemultipart   |https://github.com/maths/moodle-qbehaviour_adaptivemultipart    |2020103000|2021/02/17|732600708931a371633ea7d40be2b1c7c80da5b0|
 |question type    |formulas            |https://github.com/dbauer-ets/moodle-qtype_formulas             |2020061900|2020/10/29|515b377c4cbe4c7de355647ea84250afcaa684a0|
