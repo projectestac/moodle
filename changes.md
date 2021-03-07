@@ -1,3 +1,9 @@
+### 3.10.2 (Build: 20210308)
+#### Updates
+- Updated `mod/choicegroup` to 1.21 (Build: 2020121900)
+- Updated `mod/questionnaire` to 3.11.0 Beta (Build - 2020111800)
+- Updated `question/behavior/adaptivemultipart` to 4.3.7
+
 ### 3.10+ (Build: 20210108)
 #### Updates
 - Upadted `theme/xtec2020` to 0.1.2 (Build 2021011200)

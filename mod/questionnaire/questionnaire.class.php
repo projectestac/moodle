@@ -1110,6 +1110,7 @@ class questionnaire {
             if (empty($msg)) {
                 return;
             }
+            $formdata->rid = $this->existing_response_action($formdata, $userid);
         }
 
         if (!empty($formdata->resume) && ($this->resume)) {
@@ -1124,6 +1125,7 @@ class questionnaire {
             $msg = $this->response_check_format($formdata->sec, $formdata);
             if ($msg) {
                 $formdata->next = '';
+                $formdata->rid = $this->existing_response_action($formdata, $userid);
             } else {
                 $nextsec = $this->next_page_action($formdata, $userid);
                 if ($nextsec === false) {
@@ -1147,6 +1149,7 @@ class questionnaire {
             $msg = $this->response_check_format($formdata->sec, $formdata, false, true);
             if ($msg) {
                 $formdata->prev = '';
+                $formdata->rid = $this->existing_response_action($formdata, $userid);
             } else {
                 $prevsec = $this->previous_page_action($formdata, $userid);
                 if ($prevsec === false) {
@@ -2971,7 +2974,6 @@ class questionnaire {
             $fullname = fullname($user);
             $username = $user->username;
         }
-        $modulename = $this->name;
 
         if (in_array('response', $options)) {
             array_push($positioned, $resprow->rid);
@@ -3001,12 +3003,6 @@ class questionnaire {
         }
         if (in_array('username', $options)) {
             array_push($positioned, $username);
-        }
-        if (in_array('userid', $options)) {
-            array_push($positioned, $user->id);
-        }
-        if (in_array('modulename', $options)) {
-            array_push($positioned, $modulename);
         }
         if (in_array('complete', $options)) {
             array_push($positioned, $resprow->complete);
@@ -3050,11 +3046,8 @@ class questionnaire {
         $columns = array();
         $types = array();
         foreach ($options as $option) {
-            if (in_array($option, array('response', 'submitted', 'id', 'modulename'))) {
+            if (in_array($option, array('response', 'submitted', 'id'))) {
                 $columns[] = get_string($option, 'questionnaire');
-                $types[] = 0;
-            } else if (in_array($option, array('userid'))) {
-                $columns[] = get_string($option, 'grades');
                 $types[] = 0;
             } else {
                 $columns[] = get_string($option);
