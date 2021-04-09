@@ -1,3 +1,7 @@
+### 3.8.8+ (Build: 20210324)
+#### New plugins
+- Added `question/type/drawing`
+
 ### 3.8.8 (Build: 20210308)
 #### Updates
 - Updated `mod/choicegroup` to 1.21 (Build: 2020121900)
