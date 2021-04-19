@@ -48,3 +48,5 @@
 |question behavior|adaptivemultipart   |https://github.com/maths/moodle-qbehaviour_adaptivemultipart    |2020103000|2021/02/17|732600708931a371633ea7d40be2b1c7c80da5b0|
 |question type    |formulas            |https://github.com/dbauer-ets/moodle-qtype_formulas             |2020061900|2020/10/29|515b377c4cbe4c7de355647ea84250afcaa684a0|
 |question type    |drawing             |https://github.com/ethz-let/moodle-qtype_drawing                |2021032900|2021/04/01|78783bc0a36be3fcfc98d02a532d2b4cc7f76133|
+|course format    |topcoll             |https://github.com/gjb2048/moodle-format_topcoll                |2019111706|2021/04/19|dc035f443085afeea14b4de97600e71e03eef0f1|
+
