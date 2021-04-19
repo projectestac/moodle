@@ -1,6 +1,7 @@
 ### 3.10.3+ (Build: 20210330)
 #### New plugins
 - Added `question/type/drawing`
+- Added `course/format/topcoll`
 
 ### 3.10.2 (Build: 20210308)
 #### Updates
