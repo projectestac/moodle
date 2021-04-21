@@ -29,6 +29,8 @@ $string['blankwindow'] = 'Open in a new window';
 $string['blankwindow_help'] = 'When selected, the link will open the referenced course in a new browser window.';
 $string['currentgrade'] = 'Current grade: {$a}';
 $string['currentprogress'] = 'Progress: {$a}%';
+$string['displayoption:coursepageprintgrade'] = 'Display grade from referenced course on course page';
+$string['displayoption:coursepageprintprogress'] = 'Display progress from referenced course on course page';
 $string['errfetch'] = 'Unable to fetch grades: error code {$a}';
 $string['errlocalremotescale'] = 'Unable to fetch grades: the remote final grade item uses local scale.';
 $string['eventgradesfetched'] = 'Grades fetched';
@@ -61,10 +63,14 @@ $string['privacy:metadata'] = 'Subcourse does not store any personal data';
 $string['refcourse'] = 'Referenced course';
 $string['refcourse_help'] = 'The referenced course is the one the grade of the activity is taken from. Students should be enroled into the referenced course.
 
-You need to be a teacher in the course to have it listed here. You may nned to ask your site administrator to set up this activity for you to fetch grades from other courses.';
+You need to be a teacher in the course to have it listed here. You may need to ask your site administrator to set up this activity for you to fetch grades from other courses.';
 $string['refcoursecurrent'] = 'Keep current reference';
 $string['refcourselabel'] = 'Fetch grades from';
 $string['refcoursenull'] = 'No referenced course configured';
+$string['settings:coursepageprintgrade'] = 'Grade on course page';
+$string['settings:coursepageprintgrade_desc'] = 'Display grade from referenced course on course page.';
+$string['settings:coursepageprintprogress'] = 'Progress on course page';
+$string['settings:coursepageprintprogress_desc'] = 'Display progress from referenced course on course page.';
 $string['subcourse:addinstance'] = 'Add a new subcourse';
 $string['subcourse:begraded'] = 'Receive grade from the referenced course';
 $string['subcourse:fetchgrades'] = 'Fetch grades manually from the referenced course';
