@@ -1,5 +1,6 @@
 ### 3.10.3+ (Build: 20210416)
 - Added `course/format/topcoll`
+- Updated `course/format/grid` to 3.10.1.1
 
 ### 3.10.3+ (Build: 20210330)
 #### New plugins

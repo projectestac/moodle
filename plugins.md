@@ -43,7 +43,7 @@
 
 |Type             |Name                |Source                                                          |Version   |Date      | Commit                                 |
 |-----------------|--------------------|----------------------------------------------------------------|----------|----------|----------------------------------------|
-|course format    |grid                |https://github.com/gjb2048/moodle-format_grid                   |2020111400|2020/11/16|90e4e14560b3e72cc0a6a90e167adc552c7c30a3|
+|course format    |grid                |https://github.com/gjb2048/moodle-format_grid                   |2020111402|2021/04/27|1f5e37f27e566c03f0ad22c247c1bff214b7ea8c|
 |mod              |subcourse           |https://github.com/mudrd8mz/moodle-mod_subcourse                |2021021400|2021/04/21|48d26da8b2e6196606544864dfae306966127565|
 |question behavior|adaptivemultipart   |https://github.com/maths/moodle-qbehaviour_adaptivemultipart    |2020103000|2021/02/17|732600708931a371633ea7d40be2b1c7c80da5b0|
 |question type    |formulas            |https://github.com/dbauer-ets/moodle-qtype_formulas             |2020061900|2020/10/29|515b377c4cbe4c7de355647ea84250afcaa684a0|
