@@ -1,6 +1,13 @@
 ### 3.10.3+ (Build: 20210416)
 - Added `course/format/topcoll`
 - Updated `course/format/grid` to 3.10.1.1
+- Updated `mod/qtype/wq` to 3.78.4
+- Updated `mod/qtype/essaywiris` to 3.78.4
+- Updated `mod/qtype/matchwiris` to 3.78.4
+- Updated `mod/qtype/multianswerwiris` to 3.78.4
+- Updated `mod/qtype/multichoicewiris` to 3.78.4
+- Updated `mod/qtype/truefalsewiris` to 3.78.4
+- Updated `mod/qtype/shortanswerwiris` to 3.78.4
 
 ### 3.10.3+ (Build: 20210330)
 #### New plugins
