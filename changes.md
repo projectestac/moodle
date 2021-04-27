@@ -3,6 +3,13 @@
 - Added `question/type/drawing`
 - Added `course/format/topcoll`
 - Updated `course/format/grid` to 3.8.1.1
+- Updated `mod/qtype/wq` to 3.78.4
+- Updated `mod/qtype/essaywiris` to 3.78.4
+- Updated `mod/qtype/matchwiris` to 3.78.4
+- Updated `mod/qtype/multianswerwiris` to 3.78.4
+- Updated `mod/qtype/multichoicewiris` to 3.78.4
+- Updated `mod/qtype/truefalsewiris` to 3.78.4
+- Updated `mod/qtype/shortanswerwiris` to 3.78.4
 
 ### 3.8.8 (Build: 20210308)
 #### Updates
