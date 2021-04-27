@@ -198,15 +198,31 @@ class format_grid_renderer extends format_section_renderer_base {
     }
 
     /**
-     * Generate the display of the header part of a section before
-     * course modules are included for when section 0 is in the grid
-     * and a single section page.
+     * Generate the display of the header part of a section before course modules are included.
+     *
+     * @param stdClass $section The course_section entry from DB.
+     * @param stdClass $course The course entry from DB.
+     * @param bool $onsectionpage true if being printed on a single-section page.
+     * @param int $sectionreturn The section to return to after an action.
+     * @return string HTML to output.
+     */
+    protected function section_header($section, $course, $onsectionpage, $sectionreturn=null) {
+        if (($section->section == 0) && ($onsectionpage)) {
+            return $this->section_header_onsectionpage($section, $course, $sectionreturn);
+        } else {
+            return parent::section_header($section, $course, $onsectionpage, $sectionreturn);
+        }
+    }
+
+    /**
+     * Generate the display of the header part of a section before course modules are included for
+     * when section 0 is used with a single section page.
      *
      * @param stdClass $section The course_section entry from DB
      * @param stdClass $course The course entry from DB
      * @return string HTML to output.
      */
-    protected function section_header_onsectionpage_topic0notattop($section, $course) {
+    protected function section_header_onsectionpage($section, $course) {
         $o = '';
         $sectionstyle = '';
 
@@ -224,7 +240,7 @@ class format_grid_renderer extends format_section_renderer_base {
             'aria-label' => get_section_name($course, $section)));
 
         // Create a span that contains the section title to be used to create the keyboard section move menu.
-        $o .= html_writer::tag('span', get_section_name($course, $section), array('class' => 'hidden sectionname'));
+        $o .= html_writer::tag('span', get_section_name($course, $section), array('class' => 'hidden sectionname', 'id' => "sectionid-{$section->id}-title"));
 
         $leftcontent = $this->section_left_content($section, $course, true);
         $o .= html_writer::tag('div', $leftcontent, array('class' => 'left side'));
@@ -232,9 +248,6 @@ class format_grid_renderer extends format_section_renderer_base {
         $rightcontent = $this->section_right_content($section, $course, true);
         $o .= html_writer::tag('div', $rightcontent, array('class' => 'right side'));
         $o .= html_writer::start_tag('div', array('class' => 'content'));
-
-        $sectionname = html_writer::tag('span', $this->section_title($section, $course));
-        $o .= $this->output->heading($sectionname, 3, 'sectionname accesshide');
 
         $o .= html_writer::start_tag('div', array('class' => 'summary'));
         $o .= $this->format_summary_text($section);
@@ -308,7 +321,7 @@ class format_grid_renderer extends format_section_renderer_base {
             // Now the list of sections..
             echo $this->start_section_list();
 
-            echo $this->section_header_onsectionpage_topic0notattop($thissection, $course);
+            echo $this->section_header_onsectionpage($thissection, $course, $displaysection);
             if ($course->enablecompletion) {
                 // Show completion help icon.
                 $completioninfo = new completion_info($course);

@@ -2,6 +2,7 @@
 #### New plugins
 - Added `question/type/drawing`
 - Added `course/format/topcoll`
+- Updated `course/format/grid` to 3.8.1.1
 
 ### 3.8.8 (Build: 20210308)
 #### Updates

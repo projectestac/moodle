@@ -1,5 +1,14 @@
 History
 =============
+Version 3.8.1.1 - 29/3/2021
+ 1. Fix 'Duplicated section name' - #134.
+ 2. All course settings now have an option to track the value of the global default as set by the administrator.  Thus, when they change,
+    then the course changes without any user interaction on the course.  The reset course functionality is still there and will
+    set the value of the setting to the this 'new' default value.  The default colour value is '-' and the colour picker box will
+    show the colour that has been set as the default.  All other settings will state what the default currently is.
+ 3. Fix settings not being reset: 'Greyout hidden' and 'Section 0 on its own page'.
+ 4. Fix incorrect value of 'numsections' when not present in the backup file.
+
 Version 3.8.1.0 - 14/11/20
   1. Fix 'Same color setting for "set or change img" as currentselectedimagecontainertextcolor in editing on' - #106.
   2. Fix scroll bar in main region when editing in Boost.
