@@ -8,6 +8,7 @@
 - Updated `mod/qtype/multichoicewiris` to 3.78.4
 - Updated `mod/qtype/truefalsewiris` to 3.78.4
 - Updated `mod/qtype/shortanswerwiris` to 3.78.4
+- Added `mod/msociograma` version 2.6
 
 ### 3.10.3+ (Build: 20210330)
 #### New plugins
