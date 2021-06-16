@@ -4,6 +4,7 @@
 - Updated `mod/choicegroup` to 1.31
 - Updated `question/type/ordering` to 2021-06-13 (03)
 - Updated `mod/jclic` to 3.0.6
+- Updated `mod/geogebra` to 3.6.2
 
 ### 3.11+ (Build: 20210604)
 - Cloned from upstream
