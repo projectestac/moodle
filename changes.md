@@ -2,6 +2,7 @@
 - Moodle core updated from upstream
 - Added course format "eTask" (https://moodle.org/plugins/format_etask)
 - Updated `mod/choicegroup` to 1.31
+- Updated `question/type/ordering` to 2021-06-13 (03)
 
 ### 3.11+ (Build: 20210604)
 - Cloned from upstream
@@ -13,13 +14,13 @@
 ### 3.10.3+ (Build: 20210416)
 - Added `course/format/topcoll`
 - Updated `course/format/grid` to 3.10.1.1
-- Updated `mod/qtype/wq` to 3.78.4
-- Updated `mod/qtype/essaywiris` to 3.78.4
-- Updated `mod/qtype/matchwiris` to 3.78.4
-- Updated `mod/qtype/multianswerwiris` to 3.78.4
-- Updated `mod/qtype/multichoicewiris` to 3.78.4
-- Updated `mod/qtype/truefalsewiris` to 3.78.4
-- Updated `mod/qtype/shortanswerwiris` to 3.78.4
+- Updated `question/type/wq` to 3.78.4
+- Updated `question/type/essaywiris` to 3.78.4
+- Updated `question/type/matchwiris` to 3.78.4
+- Updated `question/type/multianswerwiris` to 3.78.4
+- Updated `question/type/multichoicewiris` to 3.78.4
+- Updated `question/type/truefalsewiris` to 3.78.4
+- Updated `question/type/shortanswerwiris` to 3.78.4
 
 ### 3.10.3+ (Build: 20210330)
 #### New plugins

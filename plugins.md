@@ -35,7 +35,7 @@
 |question type    |shortanswerwiris    |https://github.com/wiris/moodle-qtype_shortanswerwiris          |2020120900|2021/04/27|4592df03de5c144c7db5ecf814b0e739baa4860e|
 |question type    |truefalsewiris      |https://github.com/wiris/moodle-qtype_truefalsewiris            |2020120900|2021/04/27|c4515387d44b73c65126891e3ee65a3711505d8f|
 |question type    |wq                  |https://github.com/wiris/moodle-qtype_wq                        |2020120900|2021/04/27|32c1531917aa26ea035c4d16eca0417f83b838e3|
-|question type    |ordering            |https://github.com/gbateson/moodle-qtype_ordering               |2019121400|2020/06/16|e72bcf9c7effbe0718c0687069ee4990cfec1892|
+|question type    |ordering            |https://github.com/gbateson/moodle-qtype_ordering               |2021061303|2021/06/16|cda6bed05275783954cc9bf12f2ef36d942b9694|
 |report           |coursequotas        |https://github.com/projectestac/moodle-report_coursequotas      |2016091400|2020/06/16|d1e029092f5d5cddd603ab4972209759817ea3ef|
 |theme            |xtec2020            |https://github.com/projectestac/moodle-theme_xtec2020           |2021011200|2021/01/12|beb87b0e58ca1faf4db9b38b38a6c9854ad391fc|
 
