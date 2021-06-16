@@ -50,3 +50,4 @@
 |question type    |drawing             |https://github.com/ethz-let/moodle-qtype_drawing                |2021032900|2021/04/01|78783bc0a36be3fcfc98d02a532d2b4cc7f76133|
 |course format    |topcoll             |https://github.com/gjb2048/moodle-format_topcoll                |2019111706|2021/04/19|dc035f443085afeea14b4de97600e71e03eef0f1|
 |mod              |msociograma         |https://sourceforge.net/projects/msociograma/                   |2020020126|2021/05/03|--- Versió 2.6 -------------------------|
+|course format    |etask               |https://gitlab.com/drlikm/format_etask                          |2021052601|2021/06/16|29d8ea9b41cf13e72c9ebfb74291e30aa473cd56|

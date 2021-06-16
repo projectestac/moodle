@@ -1,3 +1,9 @@
+### 2021/06/16
+
+__THIS BRANCH IS DISCONTINUED!__
+
+Please switch to [MOODLE_311_STABLE](https://github.com/projectestac/moodle-lab/tree/MOODLE_311_STABLE)
+
 ### 3.8.8+ (Build: 20210324)
 #### New plugins
 - Added `question/type/drawing`
@@ -11,6 +17,7 @@
 - Updated `mod/qtype/truefalsewiris` to 3.78.4
 - Updated `mod/qtype/shortanswerwiris` to 3.78.4
 - Added `mod/msociograma` version 2.6
+- Added course format "eTask" (https://moodle.org/plugins/format_etask)
 
 ### 3.8.8 (Build: 20210308)
 #### Updates
