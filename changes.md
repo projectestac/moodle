@@ -3,6 +3,7 @@
 - Added course format "eTask" (https://moodle.org/plugins/format_etask)
 - Updated `mod/choicegroup` to 1.31
 - Updated `question/type/ordering` to 2021-06-13 (03)
+- Updated `mod/jclic` to 3.0.6
 
 ### 3.11+ (Build: 20210604)
 - Cloned from upstream
