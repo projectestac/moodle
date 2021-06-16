@@ -1,6 +1,7 @@
 ### 3.11+ (Build: 20210611)
 - Moodle core updated from upstream
 - Added course format "eTask" (https://moodle.org/plugins/format_etask)
+- Updated `mod/choicegroup` to 1.31
 
 ### 3.11+ (Build: 20210604)
 - Cloned from upstream
